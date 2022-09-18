@@ -76,6 +76,9 @@ const Navbar = () => {
                 <Link href='/add/artist'>ADD ARTIST</Link>
               </li>
               <li className='uppercase font-bold text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
+                <Link href='/artist/experiment'>ARTIST (EXPERIMENT)</Link>
+              </li>
+              <li className='uppercase font-bold text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
                 <Link href='/contact'>Contact</Link>
               </li>
             </ul>
