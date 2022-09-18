@@ -1,0 +1,6 @@
+html,
+body {
+  @apply bg-white h-screen;
+  height: 100%;
+  font-family: 'Prompt', sans-serif;
+}

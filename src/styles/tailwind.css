@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-Regular.ttf');
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-Medium.ttf');
+  font-weight: medium;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Prompt';
+  src: url('/fonts/Prompt-Bold.ttf');
+  font-weight: bold;
+  font-display: swap;
+  font-style: normal;
+}
+
+@layer utilities {
+  @variants responsive {
+    .masonry {
+      column-gap: 1.5em;
+      column-count: 1;
+    }
+    .masonry-sm {
+      column-gap: 1.5em;
+      column-count: 2;
+    }
+    .masonry-md {
+      column-gap: 1.5em;
+      column-count: 3;
+    }
+    .break-inside {
+      break-inside: avoid;
+    }
+  }
+}
