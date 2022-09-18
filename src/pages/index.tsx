@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <meta property='og:type' content='website' />
         <meta
           name='description'
-          content='1TPOP - อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงฮิต เพลงใหม่ล่าสุด'
+          content='1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงใหม่ล่าสุด'
         />
         <meta
           property='og:title'
@@ -18,14 +18,16 @@ const Home: NextPage = () => {
         />
         <meta
           property='og:description'
-          content='1TPOP - อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงฮิต เพลงใหม่ล่าสุด'
+          content='1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงใหม่ล่าสุด'
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className='px-8 w-full'>
-        <h1 className='text-4xl uppercase font-bold'>
-          YouTube’s Thailand Top Songs Chart This Week!{' '}
-          <span className='text-2xl'>(15/08/22 - 21/08/22)</span>
+        <h1 className='text-xl lg:text-3xl xl:text-4xl uppercase font-bold'>
+          YouTube’s T-POP Top Songs Chart This Week!{' '}
+          <span className='text-base lg:text-xl xl:text-2xl'>
+            (15/08/22 - 21/08/22)
+          </span>
         </h1>
         {/* <div className='relative flex py-5 items-center'>
           <div className='flex-grow border-t bg-gradient-to-r from-[#FF2727] to-[#0047FF]'></div>
