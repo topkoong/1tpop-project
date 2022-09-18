@@ -1,4 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { FunctionComponent } from 'react';
+
+// TODO
+// Update image tag
 
 const YoutubeChart: FunctionComponent = () => {
   return (
