@@ -48,18 +48,18 @@ const YoutubeChart: FunctionComponent = () => {
             <div>
               <img src='./images/klear.png' alt='' />
             </div>
-            <span className='my-4 inline-block'>
+            <span className='my-4 inline-block font-bold text-lg'>
               ถามเพื่ออะไร (What for?) - KLEAR 「Official MV」
             </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>1,040,589</span>
+            <span className='inline-block font-bold text-lg'>1,040,589</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>14/08/2022</span>
+            <span className='inline-block font-bold text-lg'>14/08/2022</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>Lorem</span>
+            <span className='inline-block font-bold text-lg'>Lorem</span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -86,17 +86,19 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/4eve-small.png' alt='' />
               </div>
-              <span className='mx-4'>4EVE - JACKPOT | Official M/V</span>
+              <span className='mx-4 font-bold text-lg'>
+                4EVE - JACKPOT | Official M/V
+              </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>1,040,589</span>
+            <span className='inline-block font-bold text-lg'>1,040,589</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>14/08/2022</span>
+            <span className='inline-block font-bold text-lg'>14/08/2022</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>Lorem</span>
+            <span className='inline-block font-bold text-lg'>Lorem</span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -123,17 +125,19 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4'>4EVE - JACKPOT | Official M/V</span>
+              <span className='mx-4 font-bold text-lg'>
+                4EVE - JACKPOT | Official M/V
+              </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>1,040,589</span>
+            <span className='inline-block font-bold text-lg'>1,040,589</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>14/08/2022</span>
+            <span className='inline-block font-bold text-lg'>14/08/2022</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>Lorem</span>
+            <span className='inline-block font-bold text-lg'>Lorem</span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -160,17 +164,19 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4'>4EVE - JACKPOT | Official M/V</span>
+              <span className='mx-4 font-bold text-lg'>
+                4EVE - JACKPOT | Official M/V
+              </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>1,040,589</span>
+            <span className='inline-block font-bold text-lg'>1,040,589</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>14/08/2022</span>
+            <span className='inline-block font-bold text-lg'>14/08/2022</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>Lorem</span>
+            <span className='inline-block font-bold text-lg'>Lorem</span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -197,17 +203,19 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4'>4EVE - JACKPOT | Official M/V</span>
+              <span className='mx-4 font-bold text-lg'>
+                4EVE - JACKPOT | Official M/V
+              </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>1,040,589</span>
+            <span className='inline-block font-bold text-lg'>1,040,589</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>14/08/2022</span>
+            <span className='inline-block font-bold text-lg'>14/08/2022</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>Lorem</span>
+            <span className='inline-block font-bold text-lg'>Lorem</span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -234,17 +242,19 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4'>4EVE - JACKPOT | Official M/V</span>
+              <span className='mx-4 font-bold text-lg'>
+                4EVE - JACKPOT | Official M/V
+              </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>1,040,589</span>
+            <span className='inline-block font-bold text-lg'>1,040,589</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>14/08/2022</span>
+            <span className='inline-block font-bold text-lg'>14/08/2022</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>Lorem</span>
+            <span className='inline-block font-bold text-lg'>Lorem</span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -271,17 +281,19 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4'>4EVE - JACKPOT | Official M/V</span>
+              <span className='mx-4 font-bold text-lg'>
+                4EVE - JACKPOT | Official M/V
+              </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>1,040,589</span>
+            <span className='inline-block font-bold text-lg'>1,040,589</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>14/08/2022</span>
+            <span className='inline-block font-bold text-lg'>14/08/2022</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>Lorem</span>
+            <span className='inline-block font-bold text-lg'>Lorem</span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -308,17 +320,19 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4'>4EVE - JACKPOT | Official M/V</span>
+              <span className='mx-4 font-bold text-lg'>
+                4EVE - JACKPOT | Official M/V
+              </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>1,040,589</span>
+            <span className='inline-block font-bold text-lg'>1,040,589</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>14/08/2022</span>
+            <span className='inline-block font-bold text-lg'>14/08/2022</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>Lorem</span>
+            <span className='inline-block font-bold text-lg'>Lorem</span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -345,17 +359,19 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4'>4EVE - JACKPOT | Official M/V</span>
+              <span className='mx-4 font-bold text-lg'>
+                4EVE - JACKPOT | Official M/V
+              </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>1,040,589</span>
+            <span className='inline-block font-bold text-lg'>1,040,589</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>14/08/2022</span>
+            <span className='inline-block font-bold text-lg'>14/08/2022</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>Lorem</span>
+            <span className='inline-block font-bold text-lg'>Lorem</span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -382,17 +398,19 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4'>4EVE - JACKPOT | Official M/V</span>
+              <span className='mx-4 font-bold text-lg'>
+                4EVE - JACKPOT | Official M/V
+              </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>1,040,589</span>
+            <span className='inline-block font-bold text-lg'>1,040,589</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>14/08/2022</span>
+            <span className='inline-block font-bold text-lg'>14/08/2022</span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block'>Lorem</span>
+            <span className='inline-block font-bold text-lg'>Lorem</span>
           </td>
         </tr>
       </tbody>
