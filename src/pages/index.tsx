@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import type { NextPage } from 'next';
 import YoutubeChart from '@components/YouTubeChart';
-
+import moment from 'moment';
 const Home: NextPage = () => {
+  const startOfWeek = moment().startOf('isoWeek');
+  const endOfWeek = moment().endOf('isoWeek');
   return (
     <>
       <Head>
@@ -26,10 +28,10 @@ const Home: NextPage = () => {
         <h1 className='text-base lg:text-3xl xl:text-4xl uppercase font-bold'>
           YouTube’s T-POP Top Songs Chart This Week!{' '}
           <span className='hidden md:block text-sm md:text-base lg:text-xl xl:text-2xl'>
-            (15/08/22 - 21/08/22)
+            {`(${startOfWeek} - ${endOfWeek})`}
           </span>
           <p className='block md:hidden text-base lg:text-xl xl:text-2xl'>
-            (15/08/22 - 21/08/22)
+            {`(${startOfWeek} - ${endOfWeek})`}
           </p>
         </h1>
         {/* <div className='relative flex py-5 items-center'>
