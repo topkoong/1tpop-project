@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className='flex flex-wrap justify-between items-center mx-auto'>
           <Link href='/'>
             <div className='flex items-center'>
-              <span className='self-center text-transparent text-8xl bg-clip-text bg-gradient-to-r from-[#FF2727] to-[#0047FF] font-semibold whitespace-nowrap'>
+              <span className='self-center text-transparent text-3xl lg:text-6xl xl:text-8xl bg-clip-text bg-gradient-to-r from-[#FF2727] to-[#0047FF] font-semibold whitespace-nowrap'>
                 1TPOP!
               </span>
             </div>
@@ -64,21 +64,21 @@ const Navbar = () => {
             id='navbar-default'
           >
             <ul className='flex flex-col p-4 mt-4 bg-white rounded-lg md:flex-row md:space-x-8 md:mt-0'>
-              <li className='uppercase font-bold text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
+              <li className='uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
                 <Link href='/' aria-current='page'>
                   CHART
                 </Link>
               </li>
-              <li className='uppercase font-bold text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
+              <li className='uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
                 <Link href='/artist'>ARTIST</Link>
               </li>
-              <li className='uppercase font-bold text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
+              <li className='uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
                 <Link href='/add/artist'>ADD ARTIST</Link>
               </li>
-              <li className='uppercase font-bold text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
+              <li className='uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
                 <Link href='/artist/experiment'>ARTIST (EXPERIMENT)</Link>
               </li>
-              <li className='uppercase font-bold text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
+              <li className='uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
                 <Link href='/contact'>Contact</Link>
               </li>
             </ul>

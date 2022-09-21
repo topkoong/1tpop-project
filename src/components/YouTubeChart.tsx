@@ -9,25 +9,29 @@ const YoutubeChart: FunctionComponent = () => {
     <table className='w-full'>
       <thead>
         <tr className='border-b-2'>
-          <th className='text-left uppercase font-bold text-xl py-3 px-4 whitespace-nowrap'>
+          <th className='text-left uppercase font-bold text-base lg:text-xl py-3 px-4 whitespace-nowrap'>
             Rank
           </th>
-          <th className='text-left uppercase font-bold text-xl py-3 px-4 '>
+          <th className='text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
             Song
           </th>
-          <th className='text-left uppercase font-bold text-xl py-3 px-4 '>
+          <th className='text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
             Views
           </th>
-          <th className='text-left uppercase font-bold text-xl py-3 px-4 '>
+          <th className='text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
             Release
           </th>
-          <th className='text-left font-bold text-xl py-3 px-4 '>Lorem</th>
+          <th className='text-left font-bold text-base lg:text-xl py-3 px-4 '>
+            Lorem
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr className='border-b-2'>
           <td className='w-full grid grid-cols-2 place-items-center'>
-            <span className='uppercase font-bold text-[136px]'>1</span>
+            <span className='uppercase font-bold text-7xl lg:text-[136px]'>
+              1
+            </span>
             <div className='w-6'>
               <svg
                 width='21'
@@ -48,23 +52,31 @@ const YoutubeChart: FunctionComponent = () => {
             <div>
               <img src='./images/klear.png' alt='' />
             </div>
-            <span className='my-4 inline-block font-bold text-lg'>
+            <span className='my-4 inline-block font-bold text-base lg:text-xl'>
               ถามเพื่ออะไร (What for?) - KLEAR 「Official MV」
             </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>1,040,589</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              1,040,589
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>14/08/2022</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              14/08/2022
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>Lorem</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              Lorem
+            </span>
           </td>
         </tr>
         <tr className='border-b-2'>
           <td className='w-full grid grid-cols-2 place-items-center'>
-            <span className='uppercase font-bold text-[84px]'>2</span>
+            <span className='uppercase font-bold text-6xl lg:text-[84px]'>
+              2
+            </span>
             <div className='w-6'>
               <svg
                 width='21'
@@ -86,24 +98,32 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/4eve-small.png' alt='' />
               </div>
-              <span className='mx-4 font-bold text-lg'>
+              <span className='mx-4 font-bold text-base lg:text-xl'>
                 4EVE - JACKPOT | Official M/V
               </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>1,040,589</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              1,040,589
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>14/08/2022</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              14/08/2022
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>Lorem</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              Lorem
+            </span>
           </td>
         </tr>
         <tr className='border-b-2'>
           <td className='w-full grid grid-cols-2 place-items-center'>
-            <span className='uppercase font-bold text-[84px]'>3</span>
+            <span className='uppercase font-bold text-6xl lg:text-[84px]'>
+              3
+            </span>
             <div className='w-6'>
               <svg
                 width='21'
@@ -125,19 +145,25 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4 font-bold text-lg'>
+              <span className='mx-4 font-bold text-base lg:text-xl'>
                 4EVE - JACKPOT | Official M/V
               </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>1,040,589</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              1,040,589
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>14/08/2022</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              14/08/2022
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>Lorem</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              Lorem
+            </span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -164,19 +190,25 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4 font-bold text-lg'>
+              <span className='mx-4 font-bold text-base lg:text-xl'>
                 4EVE - JACKPOT | Official M/V
               </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>1,040,589</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              1,040,589
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>14/08/2022</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              14/08/2022
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>Lorem</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              Lorem
+            </span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -203,19 +235,25 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4 font-bold text-lg'>
+              <span className='mx-4 font-bold text-base lg:text-xl'>
                 4EVE - JACKPOT | Official M/V
               </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>1,040,589</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              1,040,589
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>14/08/2022</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              14/08/2022
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>Lorem</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              Lorem
+            </span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -242,19 +280,25 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4 font-bold text-lg'>
+              <span className='mx-4 font-bold text-base lg:text-xl'>
                 4EVE - JACKPOT | Official M/V
               </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>1,040,589</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              1,040,589
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>14/08/2022</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              14/08/2022
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>Lorem</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              Lorem
+            </span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -281,19 +325,25 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4 font-bold text-lg'>
+              <span className='mx-4 font-bold text-base lg:text-xl'>
                 4EVE - JACKPOT | Official M/V
               </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>1,040,589</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              1,040,589
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>14/08/2022</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              14/08/2022
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>Lorem</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              Lorem
+            </span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -320,19 +370,25 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4 font-bold text-lg'>
+              <span className='mx-4 font-bold text-base lg:text-xl'>
                 4EVE - JACKPOT | Official M/V
               </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>1,040,589</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              1,040,589
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>14/08/2022</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              14/08/2022
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>Lorem</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              Lorem
+            </span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -359,19 +415,25 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4 font-bold text-lg'>
+              <span className='mx-4 font-bold text-base lg:text-xl'>
                 4EVE - JACKPOT | Official M/V
               </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>1,040,589</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              1,040,589
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>14/08/2022</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              14/08/2022
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>Lorem</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              Lorem
+            </span>
           </td>
         </tr>
         <tr className='border-b-2'>
@@ -398,19 +460,25 @@ const YoutubeChart: FunctionComponent = () => {
               <div>
                 <img src='./images/klear-small.png' alt='' />
               </div>
-              <span className='mx-4 font-bold text-lg'>
+              <span className='mx-4 font-bold text-base lg:text-xl'>
                 4EVE - JACKPOT | Official M/V
               </span>
             </div>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>1,040,589</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              1,040,589
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>14/08/2022</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              14/08/2022
+            </span>
           </td>
           <td className='py-8 px-4 h-full align-top'>
-            <span className='inline-block font-bold text-lg'>Lorem</span>
+            <span className='inline-block font-bold text-base lg:text-xl'>
+              Lorem
+            </span>
           </td>
         </tr>
       </tbody>

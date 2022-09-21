@@ -23,11 +23,14 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className='px-8 w-full'>
-        <h1 className='text-xl lg:text-3xl xl:text-4xl uppercase font-bold'>
+        <h1 className='text-base lg:text-3xl xl:text-4xl uppercase font-bold'>
           YouTube’s T-POP Top Songs Chart This Week!{' '}
-          <span className='text-base lg:text-xl xl:text-2xl'>
+          <span className='hidden md:block text-sm md:text-base lg:text-xl xl:text-2xl'>
             (15/08/22 - 21/08/22)
           </span>
+          <p className='block md:hidden text-base lg:text-xl xl:text-2xl'>
+            (15/08/22 - 21/08/22)
+          </p>
         </h1>
         {/* <div className='relative flex py-5 items-center'>
           <div className='flex-grow border-t bg-gradient-to-r from-[#FF2727] to-[#0047FF]'></div>
