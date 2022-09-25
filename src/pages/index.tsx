@@ -1,11 +1,16 @@
+import 'moment/locale/th';
+
 import Head from 'next/head';
 import type { NextPage } from 'next';
 import YoutubeChart from '@components/YouTubeChart';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 const Home: NextPage = () => {
-  const startOfWeek = moment().startOf('isoWeek').format('l');
-  const endOfWeek = moment().endOf('isoWeek').format('l');
+  const startOfWeek = moment()
+    .startOf('isoWeek')
+    .tz('Asia/Bangkok')
+    .format('l');
+  const endOfWeek = moment().endOf('isoWeek').tz('Asia/Bangkok').format('l');
   return (
     <>
       <Head>
