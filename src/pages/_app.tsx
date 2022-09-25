@@ -1,11 +1,16 @@
 import '../styles/tailwind.css';
 import '../styles/globals.css';
 
+import { QueryClient, QueryClientProvider } from 'react-query';
+
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Layout from '@components/Layout';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { useState } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [queryClient] = useState(() => new QueryClient());
   return (
     <>
       <Head>
@@ -20,7 +25,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Layout>
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+        </QueryClientProvider>
       </Layout>
     </>
   );
