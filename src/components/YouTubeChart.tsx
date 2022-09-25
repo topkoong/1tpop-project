@@ -38,42 +38,44 @@ const YoutubeChart: FunctionComponent = () => {
   ) : isError && error instanceof Error ? (
     <span>Error: {error?.message} </span>
   ) : (
-    <table className='w-full'>
+    <table className='w-full table-auto'>
       <thead>
         <tr className='border-b-2'>
-          <th className='text-left uppercase font-bold text-base lg:text-xl py-3 px-4 whitespace-nowrap'>
+          <th className='text-[#7B7979] text-left uppercase font-bold text-base lg:text-xl py-3 px-4 whitespace-nowrap'>
             Rank
           </th>
-          <th className='text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
+          <th className='text-[#7B7979] text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
             Song
           </th>
-          <th className='text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
+          <th className='text-[#7B7979] text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
             Views
           </th>
-          <th className='text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
+          <th className='text-[#7B7979] text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
             Release
           </th>
-          <th className='text-left font-bold text-base lg:text-xl py-3 px-4 '>
+          <th className='text-[#7B7979] text-left font-bold text-base lg:text-xl py-3 px-4 '>
             Lorem
           </th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className='w-full'>
         {Array.isArray(videoInfos) &&
           videoInfos?.map(
             (
               {
                 videoId,
                 song,
+                artist,
                 views,
                 publishedAt,
                 mediumImageUrl,
-                defaultImageUrl,
+                maxresImageUrl,
+                highImageUrl,
               }: VideoInfo,
               idx: number
             ) => (
-              <tr key={videoId} className='border-b-2'>
-                <td className='w-full grid grid-cols-2 place-items-center'>
+              <tr key={videoId} className='border-b-2 w-full h-full'>
+                <td className='py-8 h-full w-full grid grid-cols-2 place-items-center'>
                   <span
                     className={classNames('uppercase font-bold', {
                       'text-7xl lg:text-[136px] text-[136px]': idx === 0,
@@ -96,43 +98,48 @@ const YoutubeChart: FunctionComponent = () => {
                         fill='#BDFF00'
                       />
                     </svg>
-                    <span className='w-full inline-block text-center'>-</span>
                   </div>
                 </td>
                 <td className='py-8 px-4'>
                   <div
                     className={classNames({
-                      flex: idx !== 0,
+                      'flex items-center': idx !== 0,
                       '': idx === 0,
                     })}
                   >
-                    <div>
+                    <div
+                      className={classNames({
+                        'w-[117px] h-[66px]': idx !== 0,
+                        'w-[495px] h-[278px]': idx === 0,
+                      })}
+                    >
                       <img
-                        src={idx == 0 ? mediumImageUrl : defaultImageUrl}
+                        src={idx == 0 ? maxresImageUrl : mediumImageUrl}
                         alt=''
+                        className='w-full'
                       />
                     </div>
                     <span
                       className={classNames('font-bold text-base lg:text-xl', {
                         'mx-4': idx !== 0,
-                        'my-4 inline-block': idx === 0,
+                        'mt-4 inline-block': idx === 0,
                       })}
                     >
-                      {song}
+                      {`${artist} - ${song}`}
                     </span>
                   </div>
                 </td>
-                <td className='py-8 px-4 h-full align-top'>
+                <td className='py-8 px-4 h-full'>
                   <span className='inline-block font-bold text-base lg:text-xl'>
                     {views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                   </span>
                 </td>
-                <td className='py-8 px-4 h-full align-top'>
+                <td className='py-8 px-4 h-full'>
                   <span className='inline-block font-bold text-base lg:text-xl'>
                     {moment(publishedAt).format('l')}
                   </span>
                 </td>
-                <td className='py-8 px-4 h-full align-top'>
+                <td className='py-8 px-4 h-full'>
                   <span className='inline-block font-bold text-base lg:text-xl'>
                     Lorem
                   </span>
