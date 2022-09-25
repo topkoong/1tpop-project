@@ -80,7 +80,7 @@ const YoutubeChart: FunctionComponent = () => {
                 idx: number
               ) => (
                 <tr key={videoId} className='border-b-2 w-full h-full'>
-                  <td className='py-8 h-full w-full grid grid-cols-2 place-items-center'>
+                  <td className='py-2 h-full w-full grid grid-cols-2 place-items-center'>
                     <span
                       className={classNames('uppercase font-bold', {
                         'text-7xl lg:text-[136px] text-[136px]': idx === 0,
@@ -105,7 +105,7 @@ const YoutubeChart: FunctionComponent = () => {
                       </svg>
                     </div>
                   </td>
-                  <td className='py-8 px-4'>
+                  <td className='py-2 px-4'>
                     <div
                       className={classNames({
                         'flex items-center': idx !== 0,
@@ -137,18 +137,18 @@ const YoutubeChart: FunctionComponent = () => {
                       </span>
                     </div>
                   </td>
-                  <td className='py-8 px-4 h-full'>
+                  <td className='py-2 px-4 h-full'>
                     <span className='inline-block font-bold text-base lg:text-xl'>
                       {views?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                     </span>
                   </td>
-                  <td className='py-8 px-4 h-full'>
+                  <td className='py-2 px-4 h-full'>
                     <span className='inline-block font-bold text-base lg:text-xl'>
                       {!isEmpty(publishedAt) &&
                         moment(publishedAt).tz('Asia/Bangkok').format('l')}
                     </span>
                   </td>
-                  <td className='py-8 px-4 h-full'>
+                  <td className='py-2 px-4 h-full'>
                     {
                       <div className='flex justify-center text-center cursor-pointer'>
                         <Link href={url} passHref>

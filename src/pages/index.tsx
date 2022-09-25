@@ -31,7 +31,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className='px-8 w-full'>
-        <h1 className='text-base lg:text-3xl xl:text-4xl uppercase font-bold'>
+        <h1 className='text-base lg:text-3xl uppercase font-bold'>
           YouTube’s T-POP Top Songs Chart This Week!{' '}
           <span className='hidden md:inline-block text-sm md:text-base lg:text-xl xl:text-2xl'>
             {`(${startOfWeek} - ${endOfWeek})`}
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
           <div className='flex-grow border-t bg-gradient-to-r from-[#FF2727] to-[#0047FF]'></div>
           <div className='flex-grow border-t bg-gradient-to-r from-[#FF2727] to-[#0047FF]'></div>
         </div> */}
-        <div className='my-4 h-2.5 bg-gradient-to-r from-[#FF2727] to-[#0047FF] w-full'>
+        <div className='mt-4 h-2.5 bg-gradient-to-r from-[#FF2727] to-[#0047FF] w-full'>
           &nbsp;
         </div>
         <YoutubeChart />

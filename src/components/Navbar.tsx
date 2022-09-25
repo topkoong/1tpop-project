@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className='flex flex-wrap justify-between items-center mx-auto'>
           <Link href='/'>
             <div className='flex items-center'>
-              <span className='self-center text-transparent text-3xl lg:text-6xl xl:text-8xl bg-clip-text bg-gradient-to-r from-[#FF2727] to-[#0047FF] font-semibold whitespace-nowrap'>
+              <span className='self-center text-transparent text-3xl lg:text-6xl xl:text-7xl bg-clip-text bg-gradient-to-r from-[#FF2727] to-[#0047FF] font-semibold whitespace-nowrap'>
                 1TPOP!
               </span>
             </div>
