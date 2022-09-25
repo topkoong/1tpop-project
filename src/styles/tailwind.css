@@ -25,22 +25,12 @@
   font-style: normal;
 }
 
-@layer utilities {
-  @variants responsive {
-    .masonry {
-      column-gap: 1.5em;
-      column-count: 1;
-    }
-    .masonry-sm {
-      column-gap: 1.5em;
-      column-count: 2;
-    }
-    .masonry-md {
-      column-gap: 1.5em;
-      column-count: 3;
-    }
-    .break-inside {
-      break-inside: avoid;
-    }
+@layer components {
+  .spinner-wrapper {
+    @apply flex flex-col items-center justify-center h-full;
+  }
+
+  .spinner-container {
+    @apply flex items-center justify-center h-full;
   }
 }

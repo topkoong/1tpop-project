@@ -2,6 +2,7 @@ import Head from 'next/head';
 import type { NextPage } from 'next';
 import YoutubeChart from '@components/YouTubeChart';
 import moment from 'moment';
+
 const Home: NextPage = () => {
   const startOfWeek = moment().startOf('isoWeek').format('l');
   const endOfWeek = moment().endOf('isoWeek').format('l');
