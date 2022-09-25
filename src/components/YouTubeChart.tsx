@@ -4,6 +4,7 @@ import { isEmpty, orderBy } from 'lodash';
 
 /* eslint-disable @next/next/no-img-element */
 import { FunctionComponent } from 'react';
+import Link from 'next/link';
 import Spinner from './Spinner';
 import axios from 'axios';
 import classNames from 'classnames';
@@ -36,6 +37,8 @@ const YoutubeChart: FunctionComponent = () => {
     error,
   } = useQuery('fetchVideosInfos', fetchVideosInfos);
 
+  !isEmpty(videoInfos) && console.log('videoInfos: ', videoInfos);
+
   return isLoading || isEmpty(videoInfos) ? (
     <Spinner />
   ) : isError && error instanceof Error ? (
@@ -57,8 +60,8 @@ const YoutubeChart: FunctionComponent = () => {
             <th className='text-[#7B7979] text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
               Release
             </th>
-            <th className='text-[#7B7979] text-left font-bold text-base lg:text-xl py-3 px-4 '>
-              Lorem
+            <th className='text-[#7B7979] text-center font-bold text-base lg:text-xl py-3 px-4 '>
+              Watch Video
             </th>
           </tr>
         </thead>
@@ -68,13 +71,13 @@ const YoutubeChart: FunctionComponent = () => {
               (
                 {
                   videoId,
+                  url,
                   song,
                   artist,
                   views,
                   publishedAt,
                   mediumImageUrl,
                   maxresImageUrl,
-                  highImageUrl,
                 }: VideoInfo,
                 idx: number
               ) => (
@@ -147,9 +150,32 @@ const YoutubeChart: FunctionComponent = () => {
                     </span>
                   </td>
                   <td className='py-8 px-4 h-full'>
-                    <span className='inline-block font-bold text-base lg:text-xl'>
-                      Lorem
-                    </span>
+                    {
+                      <div className='flex justify-center text-center cursor-pointer'>
+                        <Link href={url} passHref>
+                          <a target='_blank' rel='noopener noreferrer'>
+                            <svg
+                              width='46'
+                              height='40'
+                              viewBox='0 0 46 40'
+                              fill='none'
+                              xmlns='http://www.w3.org/2000/svg'
+                            >
+                              <rect
+                                width='46'
+                                height='40'
+                                rx='17'
+                                fill='#FF0000'
+                              />
+                              <path
+                                d='M33 20.5L17.25 29.5933L17.25 11.4067L33 20.5Z'
+                                fill='white'
+                              />
+                            </svg>
+                          </a>
+                        </Link>
+                      </div>
+                    }
                   </td>
                 </tr>
               )
