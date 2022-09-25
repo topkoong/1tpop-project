@@ -60,7 +60,7 @@ const YoutubeChart: FunctionComponent = () => {
             <th className='text-[#7B7979] text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
               Release
             </th>
-            <th className='text-[#7B7979] text-center font-bold text-base lg:text-xl py-3 px-4 '>
+            <th className='text-[#7B7979] text-center uppercase font-bold text-base lg:text-xl py-3 px-4 '>
               Watch Video
             </th>
           </tr>
