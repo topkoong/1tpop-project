@@ -126,7 +126,7 @@ const YoutubeChart: FunctionComponent = () => {
                       </div>
                       <span
                         className={classNames(
-                          'font-bold text-base lg:text-xl',
+                          'break-all font-bold text-base lg:text-xl',
                           {
                             'mx-4': idx !== 0,
                             'inline-block mt-20': idx === 0,
