@@ -115,7 +115,7 @@ const YoutubeChart: FunctionComponent = () => {
                       <div
                         className={classNames({
                           'w-[117px] h-[66px]': idx !== 0,
-                          'w-[405px] h-[188px]': idx === 0,
+                          'w-[325px] h-[108px]': idx === 0,
                         })}
                       >
                         <img
@@ -129,7 +129,7 @@ const YoutubeChart: FunctionComponent = () => {
                           'font-bold text-base lg:text-xl',
                           {
                             'mx-4': idx !== 0,
-                            'inline-block mt-12': idx === 0,
+                            'inline-block mt-20': idx === 0,
                           }
                         )}
                       >
