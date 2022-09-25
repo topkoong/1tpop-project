@@ -12,6 +12,7 @@ specifiers:
   eslint-config-next: 12.3.0
   lodash: ^4.17.21
   moment: ^2.29.4
+  moment-timezone: ^0.5.37
   next: 12.3.0
   postcss: ^8.4.16
   react: 18.2.0
@@ -25,6 +26,7 @@ dependencies:
   classnames: 2.3.2
   lodash: 4.17.21
   moment: 2.29.4
+  moment-timezone: 0.5.37
   next: 12.3.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -1592,6 +1594,12 @@ packages:
   /minimist/1.2.6:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
+
+  /moment-timezone/0.5.37:
+    resolution: {integrity: sha512-uEDzDNFhfaywRl+vwXxffjjq1q0Vzr+fcQpQ1bU0kbzorfS7zVtZnCnGc8mhWmF39d4g4YriF6kwA75mJKE/Zg==}
+    dependencies:
+      moment: 2.29.4
+    dev: false
 
   /moment/2.29.4:
     resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
