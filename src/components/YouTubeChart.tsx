@@ -1,9 +1,10 @@
+import { isEmpty, orderBy } from 'lodash';
+
 /* eslint-disable @next/next/no-img-element */
 import { FunctionComponent } from 'react';
 import Spinner from './Spinner';
 import axios from 'axios';
 import classNames from 'classnames';
-import { isEmpty } from 'lodash';
 import moment from 'moment';
 import { useQuery } from 'react-query';
 
@@ -60,7 +61,7 @@ const YoutubeChart: FunctionComponent = () => {
       </thead>
       <tbody className='w-full'>
         {Array.isArray(videoInfos) &&
-          videoInfos?.map(
+          orderBy(videoInfos, 'views', 'desc')?.map(
             (
               {
                 videoId,
