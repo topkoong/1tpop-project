@@ -154,20 +154,20 @@ const YoutubeChart: FunctionComponent = () => {
                         <Link href={url} passHref>
                           <a target='_blank' rel='noopener noreferrer'>
                             <svg
-                              width='46'
-                              height='40'
-                              viewBox='0 0 46 40'
+                              width='36'
+                              height='31'
+                              viewBox='0 0 36 31'
                               fill='none'
                               xmlns='http://www.w3.org/2000/svg'
                             >
                               <rect
-                                width='46'
-                                height='40'
-                                rx='17'
-                                fill='#FF0000'
+                                width='35.65'
+                                height='31'
+                                rx='13'
+                                fill='#FF0707'
                               />
                               <path
-                                d='M33 20.5L17.25 29.5933L17.25 11.4067L33 20.5Z'
+                                d='M25.575 15.8875L13.3688 22.9348L13.3688 8.84022L25.575 15.8875Z'
                                 fill='white'
                               />
                             </svg>
