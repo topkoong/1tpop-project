@@ -1,12 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
+import classNames from 'classnames';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
-
 // TODO
 // Update image tag
 
 const Navbar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const router = useRouter();
+
   return (
     <header>
       <nav className='bg-white px-8 py-2.5'>
@@ -64,15 +67,39 @@ const Navbar = () => {
             id='navbar-default'
           >
             <ul className='flex flex-col p-4 mt-4 bg-white rounded-lg md:flex-row md:space-x-8 md:mt-0'>
-              <li className='uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
+              <li
+                className={classNames(
+                  'uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0',
+                  {
+                    'underline decoration-[#0047FF] decoration-4 underline-offset-4':
+                      router.pathname == '/',
+                  }
+                )}
+              >
                 <Link href='/' aria-current='page'>
                   CHART
                 </Link>
               </li>
-              <li className='uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
+              <li
+                className={classNames(
+                  'uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0',
+                  {
+                    'underline decoration-[#0047FF] decoration-4 underline-offset-4':
+                      router.pathname == '/artist/experiment',
+                  }
+                )}
+              >
                 <Link href='/artist/experiment'>EXPERIMENT</Link>
               </li>
-              <li className='uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0'>
+              <li
+                className={classNames(
+                  'uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0',
+                  {
+                    'underline decoration-[#0047FF] decoration-4 underline-offset-4':
+                      router.pathname == 'contact',
+                  }
+                )}
+              >
                 <Link href='/contact'>Contact</Link>
               </li>
             </ul>
