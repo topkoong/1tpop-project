@@ -37,8 +37,6 @@ const YoutubeChart: FunctionComponent = () => {
     error,
   } = useQuery('fetchVideosInfos', fetchVideosInfos);
 
-  !isEmpty(videoInfos) && console.log('videoInfos: ', videoInfos);
-
   return isLoading || isEmpty(videoInfos) ? (
     <Spinner />
   ) : isError && error instanceof Error ? (
@@ -141,12 +139,13 @@ const YoutubeChart: FunctionComponent = () => {
                   </td>
                   <td className='py-8 px-4 h-full'>
                     <span className='inline-block font-bold text-base lg:text-xl'>
-                      {views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                      {views?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                     </span>
                   </td>
                   <td className='py-8 px-4 h-full'>
                     <span className='inline-block font-bold text-base lg:text-xl'>
-                      {moment(publishedAt).tz('Asia/Bangkok').format('l')}
+                      {!isEmpty(publishedAt) &&
+                        moment(publishedAt).tz('Asia/Bangkok').format('l')}
                     </span>
                   </td>
                   <td className='py-8 px-4 h-full'>
