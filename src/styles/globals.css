@@ -3,6 +3,9 @@ body {
   @apply bg-white h-screen;
   height: 100%;
   font-family: 'Prompt', sans-serif;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
 }
 
 .loader div {
