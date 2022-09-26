@@ -1,9 +1,9 @@
 import 'moment/locale/th';
 
+/* eslint-disable @next/next/no-img-element */
+import { FunctionComponent, useEffect, useState } from 'react';
 import { isEmpty, orderBy } from 'lodash';
 
-/* eslint-disable @next/next/no-img-element */
-import { FunctionComponent } from 'react';
 import Link from 'next/link';
 import Spinner from './Spinner';
 import axios from 'axios';
@@ -20,6 +20,10 @@ interface VideoInfo {
 
 const YoutubeChart: FunctionComponent = () => {
   const { isXs, isSm, isMd, isLg, isXl, is2Xl } = useBreakpoints();
+  const [vdoInfos, setVdoInfos] = useState<any>([]);
+  const [isToggleReleasedButton, setIsToggleReleasedButton] = useState(false);
+  const [isToggleViewsButton, setIsToggleViewsButton] = useState(false);
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
   const fetchVideosInfos = async (): Promise<any> => {
     const { data } = await axios.get(
       `${process.env.NEXT_PUBLIC_API_URL}/videos`,
@@ -29,17 +33,35 @@ const YoutubeChart: FunctionComponent = () => {
         },
       }
     );
-    return data;
+    return orderBy(data, 'views', 'desc');
   };
 
   const {
     isLoading,
+    isSuccess,
     isError,
     data: videoInfos,
     error,
-  } = useQuery('fetchVideosInfos', fetchVideosInfos);
+  } = useQuery('fetchVideosInfos', fetchVideosInfos, {
+    onSuccess: setVdoInfos,
+  });
 
-  return isLoading || isEmpty(videoInfos) ? (
+  const handleReleaseButton = () => {
+    setIsToggleViewsButton(false);
+    setIsToggleReleasedButton((prevState) => !prevState);
+    setVdoInfos(
+      orderBy(vdoInfos, 'publishedAt', !isToggleReleasedButton ? 'desc' : 'asc')
+    );
+  };
+  const handleViewsButton = () => {
+    setIsToggleReleasedButton(false);
+    setIsToggleViewsButton((prevState) => !prevState);
+    setVdoInfos(
+      orderBy(vdoInfos, 'views', !isToggleViewsButton ? 'desc' : 'asc')
+    );
+  };
+
+  return isLoading || isEmpty(vdoInfos) ? (
     <Spinner />
   ) : isError && error instanceof Error ? (
     <span>Error: {error?.message} </span>
@@ -54,10 +76,16 @@ const YoutubeChart: FunctionComponent = () => {
             <th className='text-[#7B7979] text-left uppercase font-bold text-sm md:text-base  lg:text-xl py-3 px-4 '>
               Song
             </th>
-            <th className='text-[#7B7979] text-left uppercase font-bold text-sm md:text-base  lg:text-xl py-3 px-4 '>
+            <th
+              className='text-[#7B7979] text-left uppercase font-bold text-sm md:text-base  lg:text-xl py-3 px-4 cursor-pointer'
+              onClick={handleViewsButton}
+            >
               Views
             </th>
-            <th className='text-[#7B7979] text-left uppercase font-bold text-sm md:text-base  lg:text-xl py-3 px-4 '>
+            <th
+              className='text-[#7B7979] text-left uppercase font-bold text-sm md:text-base lg:text-xl py-3 px-4 cursor-pointer'
+              onClick={handleReleaseButton}
+            >
               Release
             </th>
             <th className='text-[#7B7979] text-center uppercase font-bold text-sm md:text-base  lg:text-xl py-3 px-4 '>
@@ -66,8 +94,8 @@ const YoutubeChart: FunctionComponent = () => {
           </tr>
         </thead>
         <tbody className='w-full'>
-          {Array.isArray(videoInfos) &&
-            orderBy(videoInfos, 'views', 'desc')?.map(
+          {Array.isArray(vdoInfos) &&
+            vdoInfos?.map(
               (
                 {
                   videoId,
