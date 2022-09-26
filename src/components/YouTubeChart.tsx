@@ -83,9 +83,10 @@ const YoutubeChart: FunctionComponent = () => {
                   <td className='py-2 h-full w-full grid grid-cols-2 place-items-center'>
                     <span
                       className={classNames('uppercase font-bold', {
-                        'text-7xl lg:text-[136px] text-[136px]': idx === 0,
-                        'text-6xl lg:text-[84px]': idx === 1 || idx === 2,
-                        'text-[40px]': idx !== 0,
+                        'text-3xl md:text-7xl lg:text-[136px]': idx === 0,
+                        'text-2xl md:text-6xl lg:text-[84px]':
+                          idx === 1 || idx === 2,
+                        'text-lg md:text-[40px]': ![0, 1, 2].includes(idx),
                       })}
                     >
                       {idx + 1}
