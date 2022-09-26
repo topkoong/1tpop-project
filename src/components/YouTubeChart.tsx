@@ -9,6 +9,7 @@ import Spinner from './Spinner';
 import axios from 'axios';
 import classNames from 'classnames';
 import moment from 'moment-timezone';
+import useBreakpoints from '@hooks/useBreakpoints';
 import { useQuery } from 'react-query';
 
 // TODO
@@ -18,6 +19,7 @@ interface VideoInfo {
 }
 
 const YoutubeChart: FunctionComponent = () => {
+  const { isXs, isSm, isMd, isLg, isXl, is2Xl } = useBreakpoints();
   const fetchVideosInfos = async (): Promise<any> => {
     const { data } = await axios.get(
       `${process.env.NEXT_PUBLIC_API_URL}/videos`,
@@ -46,20 +48,20 @@ const YoutubeChart: FunctionComponent = () => {
       <table className='w-full table-auto'>
         <thead className='bg-white sticky top-0'>
           <tr className='border-b-2'>
-            <th className='text-[#7B7979] text-left uppercase font-bold text-base lg:text-xl py-3 px-4 whitespace-nowrap'>
+            <th className='text-[#7B7979] text-left uppercase font-bold text-sm md:text-base lg:text-xl py-3 px-4 whitespace-nowrap'>
               Rank
             </th>
-            <th className='text-[#7B7979] text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
+            <th className='text-[#7B7979] text-left uppercase font-bold text-sm md:text-base  lg:text-xl py-3 px-4 '>
               Song
             </th>
-            <th className='text-[#7B7979] text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
+            <th className='text-[#7B7979] text-left uppercase font-bold text-sm md:text-base  lg:text-xl py-3 px-4 '>
               Views
             </th>
-            <th className='text-[#7B7979] text-left uppercase font-bold text-base lg:text-xl py-3 px-4 '>
+            <th className='text-[#7B7979] text-left uppercase font-bold text-sm md:text-base  lg:text-xl py-3 px-4 '>
               Release
             </th>
-            <th className='text-[#7B7979] text-center uppercase font-bold text-base lg:text-xl py-3 px-4 '>
-              Watch Video
+            <th className='text-[#7B7979] text-center uppercase font-bold text-sm md:text-base  lg:text-xl py-3 px-4 '>
+              Video
             </th>
           </tr>
         </thead>
@@ -76,6 +78,7 @@ const YoutubeChart: FunctionComponent = () => {
                   publishedAt,
                   mediumImageUrl,
                   maxresImageUrl,
+                  standardImageUrl,
                 }: VideoInfo,
                 idx: number
               ) => (
@@ -106,45 +109,35 @@ const YoutubeChart: FunctionComponent = () => {
                       </svg>
                     </div>
                   </td>
-                  <td className='py-2 px-4'>
-                    <div
-                      className={classNames({
-                        'flex items-center': idx !== 0,
-                        '': idx === 0,
-                      })}
-                    >
+                  <td className='py-2 px-4 h-full'>
+                    <div className='h-full flex flex-col gap-4 xl:gap-8 xl:flex-row xl:items-center'>
                       <div
                         className={classNames({
                           'w-[117px] h-[66px]': idx !== 0,
-                          'w-[325px] h-[108px]': idx === 0,
+                          'h-full md:w-[200px] lg:w-[300px] xl:w-[320px] 2xl:w-[325px]':
+                            idx === 0,
                         })}
                       >
                         <img
-                          src={idx == 0 ? maxresImageUrl : mediumImageUrl}
+                          src={
+                            idx === 0 && isXl ? maxresImageUrl : mediumImageUrl
+                          }
                           alt=''
                           className='w-full'
                         />
                       </div>
-                      <span
-                        className={classNames(
-                          'break-all font-bold text-base lg:text-xl',
-                          {
-                            'mx-4': idx !== 0,
-                            'inline-block mt-20': idx === 0,
-                          }
-                        )}
-                      >
+                      <span className='break-word font-bold text-sm md:text-base lg:text-xl'>
                         {`${artist} - ${song}`}
                       </span>
                     </div>
                   </td>
                   <td className='py-2 px-4 h-full'>
-                    <span className='inline-block font-bold text-base lg:text-xl'>
+                    <span className='inline-block font-bold text-sm md:text-base lg:text-xl'>
                       {views?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                     </span>
                   </td>
                   <td className='py-2 px-4 h-full'>
-                    <span className='inline-block font-bold text-base lg:text-xl'>
+                    <span className='inline-block font-bold text-sm md:text-base lg:text-xl'>
                       {!isEmpty(publishedAt) &&
                         moment(publishedAt).tz('Asia/Bangkok').format('l')}
                     </span>
