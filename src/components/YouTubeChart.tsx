@@ -83,7 +83,15 @@ const YoutubeChart: FunctionComponent = () => {
                 idx: number
               ) => (
                 <tr key={videoId} className='border-b-2 w-full h-full'>
-                  <td className='py-2 h-[140px] md:h-[160px] lg:h-[170px] xl:h-[180px] 2xl:h-[200px] w-full grid grid-cols-2 place-items-center place-content-center'>
+                  <td
+                    className={classNames(
+                      'py-2 h-[120px] xl:h-[80px] w-full grid grid-cols-2 place-items-center place-content-center',
+                      {
+                        'h-[140px] md:h-[160px] lg:h-[170px] xl:h-[180px] 2xl:h-[200px]':
+                          idx === 0,
+                      }
+                    )}
+                  >
                     <p
                       className={classNames('uppercase font-bold', {
                         'text-3xl md:text-7xl lg:text-[116px] xl:text-[126px] 2xl:text-[136px]':
