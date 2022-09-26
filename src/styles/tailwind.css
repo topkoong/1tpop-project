@@ -35,7 +35,7 @@
   }
 
   .table-container {
-    @apply overflow-y-auto block;
+    @apply overflow-y-auto block table-fixed;
     max-height: 75vh;
   }
 }
