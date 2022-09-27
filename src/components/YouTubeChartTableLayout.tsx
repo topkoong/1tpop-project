@@ -39,7 +39,7 @@ const YoutubeChartTableLayout: FunctionComponent<any> = ({ tableData }) => {
         cell: ReleaseCell,
       }),
       columnHelper.display({
-        header: 'Video',
+        header: () => <p className='text-center'>Video</p>,
         id: 'index',
         cell: VideoCell,
       }),
@@ -61,7 +61,7 @@ const YoutubeChartTableLayout: FunctionComponent<any> = ({ tableData }) => {
     data: tableData as any,
     columns: columns as any,
     initialState: {
-      sorting: [{ id: 'views', desc: true }],
+      sorting: sortees,
     },
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
