@@ -85,11 +85,11 @@ const Navbar = () => {
                   'uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0',
                   {
                     'underline decoration-[#0047FF] decoration-4 underline-offset-4':
-                      router.pathname == '/artist/experiment',
+                      router.pathname == '/experiment',
                   }
                 )}
               >
-                <Link href='/artist/experiment'>EXPERIMENT</Link>
+                <Link href='/experiment'>EXPERIMENT</Link>
               </li>
               <li
                 className={classNames(

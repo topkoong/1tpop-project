@@ -2,7 +2,7 @@ import 'moment/locale/th';
 
 import Head from 'next/head';
 import type { NextPage } from 'next';
-import YoutubeChart from '@components/YouTubeChart';
+import YoutubeChart from '@components/YouTubeChartWrapper';
 import moment from 'moment-timezone';
 
 const Home: NextPage = () => {
