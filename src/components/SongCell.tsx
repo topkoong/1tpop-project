@@ -7,8 +7,8 @@ const SongCell: FunctionComponent<any> = ({ row, getValue }) => {
   const idx = row.index;
   const { isXl } = useBreakpoints();
   return (
-    <div className='py-2 px-4 h-full'>
-      <div className='h-full flex flex-col gap-4 xl:gap-8 xl:flex-row xl:items-center'>
+    <div className='py-2 md:px-4 h-full'>
+      <div className='h-full flex flex-col gap-2 xl:gap-8 xl:flex-row xl:items-center'>
         <div
           className={classNames({
             'w-[117px] h-[66px]': idx !== 0,
