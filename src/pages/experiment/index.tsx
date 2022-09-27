@@ -2,6 +2,7 @@
 import { FunctionComponent } from 'react';
 import Head from 'next/head';
 import TabsRender from '@components/Tabs';
+import YouTubeChartTestWrapper from '@components/YouTubeChartWrapper';
 // TODO
 // Update image tag
 
@@ -32,7 +33,8 @@ const Experiment: FunctionComponent = () => {
         <h2 className='text-2xl uppercase font-medium my-8'>
           Retrieve information about a specific video.
         </h2>
-        <TabsRender />
+        {/* <TabsRender /> */}
+        {/* <YouTubeChartTestWrapper /> */}
       </main>
     </>
   );
