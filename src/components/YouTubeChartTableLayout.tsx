@@ -1,12 +1,10 @@
+import { FunctionComponent, useMemo } from 'react';
 import {
-  ColumnDef,
-  SortingState,
   createColumnHelper,
   getCoreRowModel,
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import { FunctionComponent, useMemo, useState } from 'react';
 
 import RankCell from '@components/RankCell';
 import ReleaseCell from '@components/ReleaseCell';

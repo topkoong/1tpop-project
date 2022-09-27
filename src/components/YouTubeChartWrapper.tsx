@@ -3,12 +3,12 @@ import 'moment/locale/th';
 import { isEmpty, orderBy } from 'lodash';
 
 import { FunctionComponent } from 'react';
-import Spinner from './Spinner';
-import YoutubeChartTableLayout from './YouTubeChartTableLayout';
+import Spinner from '@components/Spinner';
+import YoutubeChartTableLayout from '@components/YouTubeChartTableLayout';
 import axios from 'axios';
 import { useQuery } from 'react-query';
 
-const YoutubeChartTestWrapper: FunctionComponent = () => {
+const YoutubeChartWrapper: FunctionComponent = () => {
   const fetchVideosInfos = async (): Promise<any> => {
     const { data } = await axios.get(
       `${process.env.NEXT_PUBLIC_API_URL}/videos`,
@@ -37,4 +37,4 @@ const YoutubeChartTestWrapper: FunctionComponent = () => {
   );
 };
 
-export default YoutubeChartTestWrapper;
+export default YoutubeChartWrapper;

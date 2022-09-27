@@ -1,6 +1,4 @@
-/* eslint-disable react/jsx-key */
-import { FunctionComponent, useEffect, useState } from 'react';
-
+import { FunctionComponent } from 'react';
 import { flexRender } from '@tanstack/react-table';
 
 const YoutubeChartTable: FunctionComponent<any> = ({
@@ -58,59 +56,6 @@ const YoutubeChartTable: FunctionComponent<any> = ({
         })}
       </tbody>
     </table>
-    // <table>
-    //   <thead>
-    //     {getHeaderGroups().map((headerGroup: any) => (
-    //       <tr key={headerGroup.id}>
-    //         {headerGroup.headers.map((header: any) => {
-    //           return (
-    //             <th key={header.id} colSpan={header.colSpan}>
-    //               {header.isPlaceholder ? null : (
-    //                 <div
-    //                   {...{
-    //                     className: header.column.getCanSort()
-    //                       ? 'cursor-pointer select-none'
-    //                       : '',
-    //                     onClick: header.column.getToggleSortingHandler(),
-    //                   }}
-    //                 >
-    //                   {flexRender(
-    //                     header.column.columnDef.header,
-    //                     header.getContext()
-    //                   )}
-    //                   {{
-    //                     asc: ' 🔼',
-    //                     desc: ' 🔽',
-    //                   }[header.column.getIsSorted() as string] ?? null}
-    //                 </div>
-    //               )}
-    //             </th>
-    //           );
-    //         })}
-    //       </tr>
-    //     ))}
-    //   </thead>
-    //   <tbody>
-    //     {getRowModel()
-    //       .rows.slice(0, 10)
-    //       .map((row: any) => {
-    //         return (
-    //           <tr key={row.id}>
-    //             {row.getVisibleCells().map((cell: any) => {
-    //               return (
-    //                 <td key={cell.id}>
-    //                   {flexRender(
-    //                     cell.column.columnDef.cell,
-    //                     cell.getContext()
-    //                   )}
-    //                 </td>
-    //               );
-    //             })}
-    //           </tr>
-    //         );
-    //       })}
-    //   </tbody>
-    // </table>
   );
 };
 
