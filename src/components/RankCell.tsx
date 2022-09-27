@@ -6,7 +6,7 @@ const RankCell: FunctionComponent<any> = ({ row }) => {
   return (
     <div
       className={classNames(
-        'py-2 h-[120px] xl:h-[80px] w-full grid grid-cols-2 place-items-center place-content-center',
+        'py-2 h-[120px] xl:h-[80px] w-full grid grid-cols-1 gap-2 md:gap-0 md:grid-cols-2 place-items-center place-content-center',
         {
           'h-[140px] md:h-[160px] lg:h-[170px] xl:h-[180px] 2xl:h-[200px]':
             idx === 0,

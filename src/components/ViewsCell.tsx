@@ -1,13 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import { FunctionComponent } from 'react';
+import useBreakpoints from '@hooks/useBreakpoints';
 
 const ViewsCell: FunctionComponent<any> = ({ getValue }) => {
+  const { isLg, isXl, is2Xl } = useBreakpoints();
+  console.log(
+    'defef: ',
+    Intl.NumberFormat('en', { notation: 'compact' }).format(getValue())
+  );
   return (
     <div className='py-2 px-4 h-full'>
       <span className='inline-block font-bold text-sm md:text-base lg:text-xl'>
-        {getValue()
-          ?.toString()
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+        {isLg || isXl || is2Xl
+          ? getValue()
+              ?.toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+          : Intl.NumberFormat('en', { notation: 'compact' }).format(getValue())}
       </span>
     </div>
   );
