@@ -32,7 +32,7 @@ const Experiment: FunctionComponent = () => {
 
         {/* <TabsRender /> */}
         {/* <YouTubeChartTestWrapper /> */}
-        <SimpleBarChart />
+        {/* <SimpleBarChart /> */}
       </main>
     </>
   );
