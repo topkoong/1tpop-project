@@ -35,27 +35,26 @@ const fetchDailyVideosIds = async (): Promise<any> => {
 };
 
 const VideoPage: NextPage = ({ videoInfos }: any) => {
+  const router = useRouter();
+  const { videoId } = router.query;
+  const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   return (
     <>
       <Head>
         <title>1TPOP</title>
         <meta property='og:type' content='website' />
-        <meta
-          name='description'
-          content='1TPOP - Get a YouTube video thumbnail from the YouTube API'
-        />
-        <meta
-          property='og:title'
-          content={`1TPOP - THE WEEK'S MOST POPULAR CURRENT SONGS ACROSS ALL GENRES`}
-        />
+        <meta name='description' content={`1TPOP - ${videoInfo?.title}`} />
+        <meta property='og:title' content={`1TPOP - ${videoInfo?.title}`} />
         <meta
           property='og:description'
-          content='1TPOP - Retrieve information about a specific video.'
+          content={`1TPOP - ${videoInfo?.title}`}
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className='px-8 w-full'>
-        <h1 className='text-4xl uppercase font-bold my-8'>Testing</h1>
+        <h1 className='text-4xl uppercase font-bold my-8'>
+          {videoInfo?.title ?? 'testing'}
+        </h1>
 
         {/* <TabsRender /> */}
         {/* <YouTubeChartTestWrapper /> */}
