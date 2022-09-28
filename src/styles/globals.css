@@ -17,6 +17,7 @@ h6 {
   /*reset for mobile browsers */
 
   font-weight: normal;
+  font-family: 'Prompt', sans-serif;
 }
 
 .loader div {
