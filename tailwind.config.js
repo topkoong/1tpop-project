@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   mode: 'jit',
   content: [
@@ -8,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        prompt: ['Prompt', 'sans-serif'],
+        prompt: ['Prompt', ...defaultTheme.fontFamily.sans],
       },
     },
   },
