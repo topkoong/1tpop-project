@@ -10,6 +10,7 @@ const RankCell: FunctionComponent<any> = ({ row }) => {
         {
           'h-[140px] md:h-[160px] lg:h-[170px] xl:h-[180px] 2xl:h-[200px]':
             idx === 0,
+          'text-[#F7282E]': [0, 1, 2].includes(idx),
         }
       )}
     >
@@ -26,6 +27,7 @@ const RankCell: FunctionComponent<any> = ({ row }) => {
       </p>
       <div className='w-6'>
         <svg
+          className='hidden md:block'
           width='21'
           height='18'
           viewBox='0 0 21 18'
@@ -33,6 +35,19 @@ const RankCell: FunctionComponent<any> = ({ row }) => {
           xmlns='http://www.w3.org/2000/svg'
         >
           <path d='M10.5 0L20.4593 17.25H0.540708L10.5 0Z' fill='#BDFF00' />
+        </svg>
+        <svg
+          className='block md:hidden'
+          width='13'
+          height='12'
+          viewBox='0 0 13 12'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            d='M6.06218 0.812134L12.1244 11.3121H0L6.06218 0.812134Z'
+            fill='#BDFF00'
+          />
         </svg>
       </div>
     </div>
