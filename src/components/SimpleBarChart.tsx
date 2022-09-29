@@ -1,4 +1,3 @@
-import { Chart, Line } from 'react-chartjs-2';
 import {
   BarController,
   BarElement,
@@ -12,6 +11,7 @@ import {
   Title,
   Tooltip,
 } from 'chart.js';
+import { Chart, Line } from 'react-chartjs-2';
 
 import { FunctionComponent } from 'react';
 import { isEmpty } from 'lodash';
