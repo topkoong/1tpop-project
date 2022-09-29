@@ -1,4 +1,4 @@
-import { Bar, Line } from 'react-chartjs-2';
+import { Chart, Line } from 'react-chartjs-2';
 import {
   BarController,
   BarElement,
@@ -135,7 +135,7 @@ const SimpleBarChart: FunctionComponent<any> = ({ videoInfos }) => {
             : ''
         }
       />
-      <Bar className='my-40' options={options} data={barChartData} />
+      <Chart type='bar' options={options} data={barChartData} />;
       <Line className='my-40' options={options} data={lineChartData} />;
     </div>
   );
