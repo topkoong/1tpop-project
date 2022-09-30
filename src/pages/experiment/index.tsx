@@ -11,7 +11,9 @@ const Experiment: FunctionComponent = () => {
   return (
     <>
       <Head>
-        <title>1TPOP</title>
+        <title>
+          1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร
+        </title>
         <meta property='og:type' content='website' />
         <meta
           name='description'

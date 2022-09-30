@@ -15,7 +15,7 @@ const Navbar = () => {
       <nav className='bg-white px-8 py-2.5'>
         <div className='flex flex-wrap justify-between items-center mx-auto'>
           <Link href='/'>
-            <div className='flex items-center'>
+            <div className='flex items-center cursor-pointer'>
               <span className='self-center text-transparent text-3xl lg:text-6xl xl:text-7xl bg-clip-text bg-gradient-to-r from-[#FF2727] to-[#0047FF] font-semibold whitespace-nowrap'>
                 1TPOP!
               </span>
@@ -72,12 +72,12 @@ const Navbar = () => {
                   'uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0',
                   {
                     'underline decoration-[#0047FF] decoration-4 underline-offset-4':
-                      router.pathname == '/',
+                      router.pathname == '/charts',
                   }
                 )}
               >
-                <Link href='/' aria-current='page'>
-                  CHART
+                <Link href='/charts' aria-current='page'>
+                  CHARTS
                 </Link>
               </li>
               <li

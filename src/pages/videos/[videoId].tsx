@@ -38,10 +38,14 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   const router = useRouter();
   const { videoId } = router.query;
   const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
-  return (
+  // TODO:
+  // handle when there's no videoId
+  if (!isEmpty(videoInfo)) {
     <>
       <Head>
-        <title>1TPOP</title>
+        <title>
+          1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร
+        </title>
         <meta property='og:type' content='website' />
         <meta name='description' content={`1TPOP - ${videoInfo?.title}`} />
         <meta property='og:title' content={`1TPOP - ${videoInfo?.title}`} />
@@ -59,6 +63,34 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
         {/* <TabsRender /> */}
         {/* <YouTubeChartTestWrapper /> */}
         <SimpleBarChart videoInfos={videoInfos} />
+      </main>
+    </>;
+  }
+  return (
+    <>
+      <Head>
+        <title>
+          1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร
+        </title>
+        <meta property='og:type' content='website' />
+        <meta
+          name='description'
+          content={`1TPOP - THE WEEK'S MOST POPULAR CURRENT SONGS ACROSS ALL GENRES`}
+        />
+        <meta
+          property='og:title'
+          content={`1TPOP - THE WEEK'S MOST POPULAR CURRENT SONGS ACROSS ALL GENRES`}
+        />
+        <meta
+          property='og:description'
+          content={`1TPOP - ${videoInfo?.title}`}
+        />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
+      <main className='px-8 w-full'>
+        <div className='flex min-h-screen flex-col items-center justify-center font-display uppercase'>
+          <p>The chart will be updated soon.</p>
+        </div>
       </main>
     </>
   );
