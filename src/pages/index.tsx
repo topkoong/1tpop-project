@@ -41,7 +41,7 @@ const Home: NextPage = () => {
       <main className='w-full h-full'>
         <section className='h-full'>
           <Swiper
-            pagination={true}
+            pagination={{ clickable: true }}
             spaceBetween={50}
             slidesPerView={1}
             loop
