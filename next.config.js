@@ -4,6 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: false,
   basePath: dev ? '' : '/1tpop-project',
+  assetPrefix: dev ? '' : '/1tpop-project',
 };
 
 module.exports = nextConfig;

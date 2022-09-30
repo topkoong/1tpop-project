@@ -43,27 +43,26 @@ const YoutubeChartTable: FunctionComponent<any> = ({
       <tbody>
         {getRowModel().rows.map((row: any, idx: number) => {
           return (
-            <Link
-              key={row.original.videoId}
-              href={`/videos/${row.original.videoId}`}
-              passHref
+            <tr
+              key={row.id}
+              className='border-b-[3px] w-full h-full cursor-pointer'
             >
-              <tr
-                key={row.id}
-                className='border-b-[3px] w-full h-full cursor-pointer'
-              >
-                {row.getVisibleCells().map((cell: any) => {
-                  return (
-                    <td key={cell.id}>
+              {row.getVisibleCells().map((cell: any) => {
+                return (
+                  <td key={cell.id}>
+                    <Link
+                      key={row.original.videoId}
+                      href={`/videos/${row.original.videoId}`}
+                    >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
                       )}
-                    </td>
-                  );
-                })}
-              </tr>
-            </Link>
+                    </Link>
+                  </td>
+                );
+              })}
+            </tr>
           );
         })}
       </tbody>
