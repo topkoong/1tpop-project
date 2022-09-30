@@ -67,7 +67,11 @@ const YoutubeChartTableLayout: FunctionComponent<any> = ({ tableData }) => {
     getSortedRowModel: getSortedRowModel(),
     debugTable: true,
   });
-  return <YouTubeChartTable {...tableInstance} />;
+  return (
+    <div className='sm:px-[20px] md:px-[40px] lg:px-[80px] xl:px-[100px]'>
+      <YouTubeChartTable {...tableInstance} />
+    </div>
+  );
 };
 
 export default YoutubeChartTableLayout;

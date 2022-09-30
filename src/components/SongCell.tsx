@@ -30,6 +30,7 @@ const SongCell: FunctionComponent<any> = ({ row, getValue }) => {
                   : row.original.mediumImageUrl
               }
               alt=''
+              // className='w-full rounded md:rounded-md lg:rounded-lg xl:rounded-xl 2xl:rounded-2xl'
               className='w-full'
             />
           </div>

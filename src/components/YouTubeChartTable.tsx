@@ -6,7 +6,7 @@ const YoutubeChartTable: FunctionComponent<any> = ({
   getRowModel,
 }) => {
   return (
-    <table className='w-full table-auto'>
+    <table className='w-full mt-4 table-auto'>
       <thead className='bg-fixed sticky top-0 bg-gradient-to-r from-[#FF2727] to-[#0047FF] h-[64px]'>
         {getHeaderGroups().map((headerGroup: any) => (
           <tr key={headerGroup.id} className='border-b-2'>

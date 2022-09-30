@@ -36,7 +36,7 @@ const Home: NextPage = () => {
           property='og:description'
           content='1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงใหม่ล่าสุด'
         />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/icons/favicon.ico' />
       </Head>
       <main className='w-full h-full'>
         <section className='h-full'>
@@ -85,18 +85,24 @@ const Home: NextPage = () => {
             </SwiperSlide>
           </Swiper>
         </section>
-        <section className='px-8'>
+        <section className='p-8'>
           <div className='w-fit'>
-            <h2 className='text-base lg:text-7xl uppercase font-bold'>
+            <h2 className='text-base md:text-3xl lg:text-6xl xl:text-7xl uppercase font-bold'>
               All Chart
             </h2>
-            <div className='flex-grow border-t h-[18px] bg-gradient-to-r from-[#FF2727] to-[#0047FF]'></div>
+            <div className='flex-grow border-t h-[8px] md:h-[18px] bg-gradient-to-r from-[#FF2727] to-[#0047FF]'></div>
           </div>
         </section>
-        <section className='p-8 my-24 h-full bg-[#FF3C3C]'>
-          <h3 className='text-base mb-8 sm:text-2xl md:text-4xl lg:text-6xl uppercase font-bold text-white'>
-            YouTube’s T-POP Top Songs Chart This Week!{' '}
-          </h3>
+        <section className='p-8 my-4 md:my-24 h-full bg-black'>
+          <div className='flex justify-between'>
+            <h1 className='text-base lg:text-3xl uppercase font-bold text-white'>
+              YouTube’s T-POP Top Songs Chart This Week!{' '}
+            </h1>
+            <span className='hidden md:inline-block text-sm md:text-base lg:text-xl xl:text-2xl font-bold text-white'>
+              {`(${startOfWeek} - ${endOfWeek})`}
+            </span>
+            <p className='block md:hidden text-white font-bold'>{`(${startOfWeek} - ${endOfWeek})`}</p>
+          </div>
           <div className='flex items-end gap-8'>
             <div className='w-[405px]'>
               <img className='w-full' src='./images/klear.png' alt='' />

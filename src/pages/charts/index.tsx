@@ -33,15 +33,11 @@ const Charts: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className='w-full'>
-        <div className='flex px-8 w-full bg-black h-[64px] items-center justify-between'>
+        <div className='flex px-8 w-full bg-black h-[144px] flex-col items-center justify-center gap-4'>
           <h1 className='text-base lg:text-3xl uppercase font-bold text-white'>
             YouTube’s T-POP Top Songs Chart This Week!{' '}
           </h1>
-          <span className='hidden md:inline-block text-sm md:text-base lg:text-xl xl:text-2xl font-bold text-white'>
-            {`(${startOfWeek} - ${endOfWeek})`}
-          </span>
-          <p className='block md:hidden text-white font-bold'>{`(${startOfWeek} - ${endOfWeek})`}</p>
-          <div className='flex gap-4'>
+          <div className='flex gap-4 items-center'>
             <button>
               <svg
                 width='40'
@@ -57,6 +53,7 @@ const Charts: NextPage = () => {
                 />
               </svg>
             </button>
+            <p className='text-sm md:text-base lg:text-xl xl:text-2xl font-bold text-white'>{`(${startOfWeek} - ${endOfWeek})`}</p>
             <button>
               <svg
                 width='40'
