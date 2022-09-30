@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
+import Link from 'next/link';
 import { flexRender } from '@tanstack/react-table';
-
 const YoutubeChartTable: FunctionComponent<any> = ({
   getHeaderGroups,
   getRowModel,
@@ -43,15 +43,27 @@ const YoutubeChartTable: FunctionComponent<any> = ({
       <tbody>
         {getRowModel().rows.map((row: any, idx: number) => {
           return (
-            <tr key={row.id} className='border-b-2 w-full h-full'>
-              {row.getVisibleCells().map((cell: any) => {
-                return (
-                  <td key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
-                );
-              })}
-            </tr>
+            <Link
+              key={row.original.videoId}
+              href={`/videos/${row.original.videoId}`}
+              passHref
+            >
+              <tr
+                key={row.id}
+                className='border-b-2 w-full h-full cursor-pointer'
+              >
+                {row.getVisibleCells().map((cell: any) => {
+                  return (
+                    <td key={cell.id}>
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext()
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            </Link>
           );
         })}
       </tbody>

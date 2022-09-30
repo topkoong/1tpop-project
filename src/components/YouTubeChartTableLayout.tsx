@@ -6,6 +6,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 
+import GraphCell from '@components/GraphCell';
 import RankCell from '@components/RankCell';
 import ReleaseCell from '@components/ReleaseCell';
 import SongCell from '@components/SongCell';
@@ -37,6 +38,11 @@ const YoutubeChartTableLayout: FunctionComponent<any> = ({ tableData }) => {
         header: 'Release',
         id: 'release',
         cell: ReleaseCell,
+      }),
+      columnHelper.display({
+        header: () => <p className='text-center'>Graph</p>,
+        id: 'index',
+        cell: GraphCell,
       }),
       columnHelper.display({
         header: () => <p className='text-center'>Video</p>,
