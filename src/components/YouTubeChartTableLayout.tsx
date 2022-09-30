@@ -74,7 +74,7 @@ const YoutubeChartTableLayout: FunctionComponent<any> = ({ tableData }) => {
     debugTable: true,
   });
   return (
-    <div className='sm:px-[20px] md:px-[40px] lg:px-[80px] xl:px-[100px]'>
+    <div className='px-0 sm:px-[20px] md:px-[40px] lg:px-[80px] xl:px-[100px]'>
       <YouTubeChartTable {...tableInstance} />
     </div>
   );

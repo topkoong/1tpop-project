@@ -32,7 +32,7 @@ const Charts: NextPage = () => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className='w-full'>
+      <main className='w-full bg-[#efefef]'>
         <div className='flex px-8 w-full bg-black h-[144px] flex-col items-center justify-center gap-4'>
           <h1 className='text-base lg:text-3xl uppercase font-bold text-white'>
             YouTube’s T-POP Top Songs Chart This Week!{' '}
