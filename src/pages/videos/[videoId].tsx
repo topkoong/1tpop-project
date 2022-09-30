@@ -40,7 +40,7 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   // TODO:
   // handle when there's no videoId
-  if (!isEmpty(videoInfo)) {
+  return !isEmpty(videoInfo) ? (
     <>
       <Head>
         <title>
@@ -64,9 +64,8 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
         {/* <YouTubeChartTestWrapper /> */}
         <SimpleBarChart videoInfos={videoInfos} />
       </main>
-    </>;
-  }
-  return (
+    </>
+  ) : (
     <>
       <Head>
         <title>
