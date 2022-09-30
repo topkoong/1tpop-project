@@ -93,8 +93,8 @@ export default class Document extends NextDocument {
             sizes='16x16'
             href='/favicon-16x16.png'
           />
-          <link rel='icon' href='/favicon.ico' />
-          <link rel='manifest' href='/manifest.json' />
+          <link rel='icon' href='./favicon.ico' />
+          <link rel='manifest' href='./manifest.json' />
         </Head>
         <body>
           <Main />
