@@ -94,26 +94,44 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section className='p-8 my-4 md:my-24 h-full bg-black'>
-          <div className='flex justify-between'>
+          <div className='flex justify-between mb-8'>
             <h1 className='text-base lg:text-3xl uppercase font-bold text-white'>
               YouTube’s T-POP Top Songs Chart This Week!{' '}
+              <span className='inline-block text-sm md:text-base lg:text-xl xl:text-2xl font-bold text-white'>
+                {`(${startOfWeek} - ${endOfWeek})`}
+              </span>
             </h1>
-            <span className='hidden md:inline-block text-sm md:text-base lg:text-xl xl:text-2xl font-bold text-white'>
-              {`(${startOfWeek} - ${endOfWeek})`}
-            </span>
-            <p className='block md:hidden text-white font-bold'>{`(${startOfWeek} - ${endOfWeek})`}</p>
+
+            <p className='uppercase text-white text-sm md:text-base lg:text-xl xl:text-2xl font-bold'>
+              view all &gt;&gt;
+            </p>
           </div>
-          <div className='flex items-end gap-8'>
-            <div className='w-[405px]'>
-              <img className='w-full' src='./images/klear.png' alt='' />
+          <div className='flex gap-8'>
+            <div className='w-full'>
+              <p className='text-white text-base my-2'>NuNew - รักแท้</p>
+              <img className='w-full' src='./images/nunew.png' alt='' />
             </div>
-            <div>
-              <h4 className='uppercase text-white font-bold text-xl sm:text-4xl md:text-6xl lg:text-8xl my-4'>
-                Rank 1
-              </h4>
-              <h5 className='uppercase text-white font-bold text-base sm:text-lg md:text-xl lg:text-2xl lg:text-3xl'>
-                ถามเพื่ออะไร (What for?) - KLEAR 「Official MV」
-              </h5>
+            <div className='w-full'>
+              <div className='flex items-center gap-8 my-2'>
+                <img
+                  className='w-[240px] md:w-[280px] lg:w-[320px] xl:w-[360px] 2xl:w-[380px]'
+                  src='./images/klear.png'
+                  alt=''
+                />
+                <p className='text-white text-base'>
+                  2 ถามเพื่ออะไร (What for?) - KLEAR
+                </p>
+              </div>
+              <div className='flex items-center gap-8 my-2'>
+                <img
+                  className='w-[240px] md:w-[280px] lg:w-[320px] xl:w-[360px] 2xl:w-[380px]'
+                  src='./images/bo.png'
+                  alt=''
+                />
+                <p className='text-white text-base'>
+                  3 BOW Maylada - เเฟนผมน่ารัก (CUTE)
+                </p>
+              </div>
             </div>
           </div>
         </section>
