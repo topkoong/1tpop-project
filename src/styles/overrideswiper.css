@@ -1,0 +1,14 @@
+/* target the active bullet */
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #d9d9d9;
+  opacity: 1;
+}
+
+/* target all bullets */
+.swiper-pagination-bullet {
+  background-color: #737373;
+  opacity: 1;
+  width: 13px !important;
+  height: 13px !important;
+}
