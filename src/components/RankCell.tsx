@@ -20,7 +20,7 @@ const RankCell: FunctionComponent<any> = ({ row }) => {
             idx === 0,
           'text-2xl md:text-6xl lg:text-[64px] xl:text-[74px] 2xl:text-[84px]':
             idx === 1 || idx === 2,
-          'text-lg md:text-[40px] my-2': ![0, 1, 2].includes(idx),
+          'text-lg md:text-[40px] my-0 md:my-2': ![0, 1, 2].includes(idx),
         })}
       >
         {idx + 1}
