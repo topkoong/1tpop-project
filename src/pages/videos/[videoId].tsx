@@ -84,7 +84,7 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
           property='og:description'
           content={`1TPOP - ${videoInfo?.title}`}
         />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='./favicon.ico' />
       </Head>
       <main className='px-8 w-full'>
         <div className='flex min-h-screen flex-col items-center justify-center font-display uppercase'>

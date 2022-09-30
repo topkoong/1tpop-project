@@ -30,7 +30,7 @@ const Charts: NextPage = () => {
           property='og:description'
           content='1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงใหม่ล่าสุด'
         />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='./favicon.ico' />
       </Head>
       <main className='w-full bg-[#efefef]'>
         <div className='flex px-8 w-full bg-black h-[144px] flex-col items-center justify-center gap-4'>
