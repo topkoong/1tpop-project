@@ -91,6 +91,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           sizes='16x16'
           href='/favicon-16x16.png'
         />
+        <link rel='icon' href='/favicon.ico' />
         <link rel='manifest' href='/manifest.json' />
         <meta name='msapplication-TileColor' content='#ffffff' />
         <meta name='msapplication-TileImage' content='/ms-icon-144x144.png' />
