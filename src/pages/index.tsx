@@ -59,7 +59,7 @@ const Home: NextPage = () => {
     isLoading: isLoadingImages,
     isError: isFetchingImagesSlidersError,
     data: imageSliders,
-    error: fetchingImagesSlidersErrors,
+    error: fetchingImagesSlidersError,
   } = useQuery('fetchImageSliders', fetchImageSliders);
   return (
     <>
@@ -80,11 +80,20 @@ const Home: NextPage = () => {
           property='og:description'
           content='1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงใหม่ล่าสุด'
         />
+        <meta
+          property='og:url'
+          content='https://topkoong.github.io/1tpop-project/'
+        />
+        <meta property='og:locale' content='th_TH' />
+        <meta property='og:site_name' content='1TPOP' />
         <link rel='icon' href='./favicon.ico' />
       </Head>
       <main className='w-full h-full'>
         {isLoadingImages || isEmpty(imageSliders) ? (
           <Spinner />
+        ) : isFetchingImagesSlidersError &&
+          fetchingImagesSlidersError instanceof Error ? (
+          <span>Error: {fetchingImagesSlidersError?.message} </span>
         ) : (
           <section className='h-full'>
             <Swiper

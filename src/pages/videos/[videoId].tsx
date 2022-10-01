@@ -51,6 +51,12 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
           property='og:description'
           content={`1TPOP - ${videoInfo?.title}`}
         />
+        <meta
+          property='og:url'
+          content={`https://topkoong.github.io/1tpop-project/${videoInfo?.videoId}`}
+        />
+        <meta property='og:site_name' content='1TPOP' />
+        <meta property='og:locale' content='th_TH' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className='px-8 w-full'>
