@@ -1,11 +1,9 @@
-import { isEmpty, uniq } from 'lodash';
-
 import Head from 'next/head';
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next';
 import SimpleBarChart from '@components/SimpleBarChart';
-import Spinner from '@components/Spinner';
 import axios from 'axios';
+import { isEmpty } from 'lodash';
 import { useRouter } from 'next/router';
 
 // TODO

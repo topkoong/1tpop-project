@@ -1,11 +1,10 @@
 import 'moment/locale/th';
 
-import { isEmpty, orderBy } from 'lodash';
-
 import { FunctionComponent } from 'react';
 import Spinner from '@components/Spinner';
 import YoutubeChartTableLayout from '@components/YouTubeChartTableLayout';
 import axios from 'axios';
+import { isEmpty } from 'lodash';
 import { useQuery } from 'react-query';
 
 const YoutubeChartWrapper: FunctionComponent = () => {
@@ -18,7 +17,7 @@ const YoutubeChartWrapper: FunctionComponent = () => {
         },
       }
     );
-    return orderBy(data, 'views', 'desc');
+    return data;
   };
 
   const {

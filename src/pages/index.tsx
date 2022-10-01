@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import 'moment/locale/th';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -7,9 +8,27 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Autoplay } from 'swiper';
 import Head from 'next/head';
+import ImageSlide from '@components/ImageSlide';
+import Link from 'next/link';
 import type { NextPage } from 'next';
 import { Pagination } from 'swiper';
+import Spinner from '@components/Spinner';
+import axios from 'axios';
+import { isEmpty } from 'lodash';
 import moment from 'moment-timezone';
+import { useQuery } from 'react-query';
+
+const fetchTopViewsVideosInfos = async (): Promise<any> => {
+  const { data } = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/videos?sort=views&limit=3`,
+    {
+      headers: {
+        'X-API-Key': process.env.NEXT_PUBLIC_X_API_KEY || '',
+      },
+    }
+  );
+  return data;
+};
 
 const Home: NextPage = () => {
   const startOfWeek = moment()
@@ -17,6 +36,12 @@ const Home: NextPage = () => {
     .tz('Asia/Bangkok')
     .format('l');
   const endOfWeek = moment().endOf('isoWeek').tz('Asia/Bangkok').format('l');
+  const {
+    isLoading,
+    isError,
+    data: videoInfos,
+    error,
+  } = useQuery('fetchTopViewsVideosInfos', fetchTopViewsVideosInfos);
   return (
     <>
       <Head>
@@ -53,56 +78,11 @@ const Home: NextPage = () => {
             onSwiper={(swiper) => console.log(swiper)}
             modules={[Autoplay, Pagination]}
           >
-            <SwiperSlide className='w-full'>
-              <div className='w-full stacked'>
-                <div className='bg-[#0047FF] mb-12 sm:mb-16 w-[133px] sm:w-[173px] md:w-[233px] lg:w-[273px] h-[33px] sm:h-[43px] md:h-[83px] lg:h-[93px] flex justify-center items-center'>
-                  <h2 className='text-base md:text-2xl lg:text-3xl uppercase font-bold text-white'>
-                    New Music
-                  </h2>
-                </div>
-                <img className='w-full media' src='./images/slide1.png' />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className='w-full'>
-              <div className='w-full stacked'>
-                <div className='bg-[#0047FF] mb-12 sm:mb-16 w-[133px] sm:w-[173px] md:w-[233px] lg:w-[273px] h-[33px] sm:h-[43px] md:h-[83px] lg:h-[93px] flex justify-center items-center'>
-                  <h2 className='text-base md:text-2xl lg:text-3xl uppercase font-bold text-white'>
-                    New Music
-                  </h2>
-                </div>
-                <img className='w-full media' src='./images/slide2.png' />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className='w-full'>
-              <div className='w-full stacked'>
-                <div className='bg-[#0047FF] mb-12 sm:mb-16 w-[133px] sm:w-[173px] md:w-[233px] lg:w-[273px] h-[33px] sm:h-[43px] md:h-[83px] lg:h-[93px] flex justify-center items-center'>
-                  <h2 className='text-base md:text-2xl lg:text-3xl uppercase font-bold text-white'>
-                    New Music
-                  </h2>
-                </div>
-                <img className='w-full media' src='./images/slide3.png' />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className='w-full'>
-              <div className='w-full stacked'>
-                <div className='bg-[#0047FF] mb-12 sm:mb-16 w-[133px] sm:w-[173px] md:w-[233px] lg:w-[273px] h-[33px] sm:h-[43px] md:h-[83px] lg:h-[93px] flex justify-center items-center'>
-                  <h2 className='text-base md:text-2xl lg:text-3xl uppercase font-bold text-white'>
-                    New Music
-                  </h2>
-                </div>
-                <img className='w-full media' src='./images/slide4.png' />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className='w-full'>
-              <div className='w-full stacked'>
-                <div className='bg-[#0047FF] mb-12 sm:mb-16 w-[133px] sm:w-[173px] md:w-[233px] lg:w-[273px] h-[33px] sm:h-[43px] md:h-[83px] lg:h-[93px] flex justify-center items-center'>
-                  <h2 className='text-base md:text-2xl lg:text-3xl uppercase font-bold text-white'>
-                    New Music
-                  </h2>
-                </div>
-                <img className='w-full media' src='./images/slide5.png' />
-              </div>
-            </SwiperSlide>
+            {[1, 2, 3, 4, 5].map((elem) => (
+              <SwiperSlide key={elem} className='w-full'>
+                <ImageSlide idx={elem} />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </section>
         <section className='p-8'>
@@ -121,39 +101,50 @@ const Home: NextPage = () => {
                 {`(${startOfWeek} - ${endOfWeek})`}
               </span>
             </h1>
-
-            <p className='uppercase text-white text-sm md:text-base lg:text-xl xl:text-2xl font-bold'>
-              view all &gt;&gt;
-            </p>
+            <Link href='/charts'>
+              <p className='uppercase text-white text-sm md:text-base lg:text-xl xl:text-2xl font-bold'>
+                view all &gt;&gt;
+              </p>
+            </Link>
           </div>
-          <div className='flex gap-8'>
-            <div className='w-full'>
-              <p className='text-white text-base my-2'>NuNew - รักแท้</p>
-              <img className='w-full' src='./images/nunew.png' alt='' />
-            </div>
-            <div className='w-full'>
-              <div className='flex items-center gap-8 my-2'>
+          {isLoading || isEmpty(videoInfos) ? (
+            <Spinner />
+          ) : isError && error instanceof Error ? (
+            <span>Error: {error?.message} </span>
+          ) : (
+            <div className='flex gap-8'>
+              <div className='w-full'>
+                <p className='text-white text-base my-2'>
+                  {videoInfos[0].title}
+                </p>
                 <img
-                  className='w-[240px] md:w-[280px] lg:w-[320px] xl:w-[360px] 2xl:w-[380px]'
-                  src='./images/klear.png'
+                  className='w-full'
+                  src={videoInfos[0].maxresImageUrl}
                   alt=''
                 />
-                <p className='text-white text-base'>
-                  2 ถามเพื่ออะไร (What for?) - KLEAR
-                </p>
               </div>
-              <div className='flex items-center gap-8 my-2'>
-                <img
-                  className='w-[240px] md:w-[280px] lg:w-[320px] xl:w-[360px] 2xl:w-[380px]'
-                  src='./images/bo.png'
-                  alt=''
-                />
-                <p className='text-white text-base'>
-                  3 BOW Maylada - เเฟนผมน่ารัก (CUTE)
-                </p>
+              <div className='w-full'>
+                {videoInfos.slice(1).map((videoInfo: any) => (
+                  <div
+                    key={videoInfo.title}
+                    className='flex items-center gap-8 my-2'
+                  >
+                    <img
+                      className='w-[240px] md:w-[280px] lg:w-[320px] xl:w-[360px] 2xl:w-[380px]'
+                      src={
+                        videoInfo.maxresImageUrl ??
+                        videoInfo.standardImageUrl ??
+                        videoInfo.highImageUrl ??
+                        videoInfo.mediumImageUrl
+                      }
+                      alt=''
+                    />
+                    <p className='text-white text-base'>{videoInfo.title}</p>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
+          )}
         </section>
         <footer className='bg-black h-[190px] w-full flex justify-center items-center'>
           <h4 className='text-center uppercase text-white font-bold text-3xl lg:text-6xl xl:text-7xl'>
@@ -164,5 +155,22 @@ const Home: NextPage = () => {
     </>
   );
 };
+
+// This function gets called at build time on server-side.
+// It may be called again, on a serverless function, if
+// revalidation is enabled and a new request comes in
+export async function getStaticProps() {
+  const videoInfos = await fetchTopViewsVideosInfos();
+
+  return {
+    props: {
+      videoInfos,
+    },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 15, // In seconds
+  };
+}
 
 export default Home;
