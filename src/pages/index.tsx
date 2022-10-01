@@ -30,6 +30,18 @@ const fetchTopViewsVideosInfos = async (): Promise<any> => {
   return data;
 };
 
+const fetchImageSliders = async (): Promise<any> => {
+  const { data } = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/images/sliders`,
+    {
+      headers: {
+        'X-API-Key': process.env.NEXT_PUBLIC_X_API_KEY || '',
+      },
+    }
+  );
+  return data;
+};
+
 const Home: NextPage = () => {
   const startOfWeek = moment()
     .startOf('isoWeek')
@@ -42,6 +54,13 @@ const Home: NextPage = () => {
     data: videoInfos,
     error,
   } = useQuery('fetchTopViewsVideosInfos', fetchTopViewsVideosInfos);
+
+  const {
+    isLoading: isLoadingImages,
+    isError: isFetchingImagesSlidersError,
+    data: imageSliders,
+    error: fetchingImagesSlidersErrors,
+  } = useQuery('fetchImageSliders', fetchImageSliders);
   return (
     <>
       <Head>
@@ -64,27 +83,31 @@ const Home: NextPage = () => {
         <link rel='icon' href='./favicon.ico' />
       </Head>
       <main className='w-full h-full'>
-        <section className='h-full'>
-          <Swiper
-            pagination={{ clickable: true }}
-            spaceBetween={50}
-            slidesPerView={1}
-            loop
-            autoplay={{
-              delay: 2500,
-            }}
-            navigation
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-            modules={[Autoplay, Pagination]}
-          >
-            {[1, 2, 3, 4, 5].map((elem) => (
-              <SwiperSlide key={elem} className='w-full'>
-                <ImageSlide idx={elem} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </section>
+        {isLoadingImages || isEmpty(imageSliders) ? (
+          <Spinner />
+        ) : (
+          <section className='h-full'>
+            <Swiper
+              pagination={{ clickable: true }}
+              spaceBetween={50}
+              slidesPerView={1}
+              loop
+              autoplay={{
+                delay: 2500,
+              }}
+              navigation
+              onSlideChange={() => console.log('slide change')}
+              onSwiper={(swiper) => console.log(swiper)}
+              modules={[Autoplay, Pagination]}
+            >
+              {imageSliders.map((imageSlider: any, idx: number) => (
+                <SwiperSlide key={idx} className='w-full'>
+                  <ImageSlide {...imageSlider} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </section>
+        )}
         <section className='p-8'>
           <div className='w-fit'>
             <h2 className='text-base md:text-3xl lg:text-6xl xl:text-7xl uppercase font-bold'>
@@ -102,7 +125,7 @@ const Home: NextPage = () => {
               </span>
             </h1>
             <Link href='/charts'>
-              <p className='uppercase text-white text-sm md:text-base lg:text-xl xl:text-2xl font-bold'>
+              <p className='cursor-pointer uppercase text-white text-sm md:text-base lg:text-xl xl:text-2xl font-bold'>
                 view all &gt;&gt;
               </p>
             </Link>
@@ -161,10 +184,12 @@ const Home: NextPage = () => {
 // revalidation is enabled and a new request comes in
 export async function getStaticProps() {
   const videoInfos = await fetchTopViewsVideosInfos();
+  const imageSliders = await fetchImageSliders();
 
   return {
     props: {
       videoInfos,
+      imageSliders,
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

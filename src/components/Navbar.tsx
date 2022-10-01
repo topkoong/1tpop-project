@@ -72,7 +72,7 @@ const Navbar = () => {
                   'uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0',
                   {
                     'underline decoration-[#0047FF] decoration-4 underline-offset-4':
-                      router.pathname == '/charts',
+                      router.pathname === '/charts',
                   }
                 )}
               >
@@ -85,7 +85,7 @@ const Navbar = () => {
                   'uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0',
                   {
                     'underline decoration-[#0047FF] decoration-4 underline-offset-4':
-                      router.pathname == '/experiment',
+                      router.pathname === '/experiment',
                   }
                 )}
               >
@@ -96,7 +96,7 @@ const Navbar = () => {
                   'uppercase font-bold text-base lg:text-xl block py-2 pr-4 pl-3 text-black rounded md:p-0',
                   {
                     'underline decoration-[#0047FF] decoration-4 underline-offset-4':
-                      router.pathname == 'contact',
+                      router.pathname === 'contact',
                   }
                 )}
               >
