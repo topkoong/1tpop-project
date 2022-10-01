@@ -13,12 +13,12 @@ export default class Document extends NextDocument {
           />
           <meta
             name='title'
-            content={`1TPOP - THE WEEK'S MOST POPULAR CURRENT SONGS ACROSS ALL GENRES`}
+            content={`1TPOP - เช็คอันดับเพลงฮิตทุกแนว 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงใหม่ล่าสุด`}
           />
 
           <meta
             property='og:title'
-            content={`1TPOP - THE WEEK'S MOST POPULAR CURRENT SONGS ACROSS ALL GENRES`}
+            content={`1TPOP - เช็คอันดับเพลงฮิตทุกแนว 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงใหม่ล่าสุด`}
           />
           <meta property='og:site_name' content='1TPOP' />
           <meta

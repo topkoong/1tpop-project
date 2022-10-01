@@ -70,32 +70,32 @@ const SimpleBarChart: FunctionComponent<any> = ({ videoInfos }) => {
     {
       label: `(${startOfWeek} - ${endOfWeek})`,
       data: videoInfos.map((dt: any, idx: number) => dt.views),
-      backgroundColor: videoInfos.map((dt: any, idx: number) =>
-        idx % 2 === 0 ? 'rgba(53, 162, 235, 0.5)' : 'rgba(255, 99, 132, 0.5)'
-      ),
-      borderWidth: 2,
-    },
-  ];
-  const lineChartDatasets = [
-    {
-      label: `(${startOfWeek} - ${endOfWeek})`,
-      borderColor: 'rgb(255, 99, 132)',
-      data: videoInfos.map((dt: any, idx: number) => dt.views),
       backgroundColor: videoInfos.map((_: any, idx: number) =>
-        idx % 2 === 0 ? 'rgba(255, 99, 132, 0.5)' : 'rgba(53, 162, 235, 0.5)'
+        idx !== videoInfos.length - 1 ? '#5C5C5C' : '#0047FF'
       ),
-      borderWidth: 4,
+      // borderWidth: 2,
     },
   ];
+  // const lineChartDatasets = [
+  //   {
+  //     label: `(${startOfWeek} - ${endOfWeek})`,
+  //     borderColor: 'rgb(255, 99, 132)',
+  //     data: videoInfos.map((dt: any, idx: number) => dt.views),
+  //     backgroundColor: videoInfos.map((_: any, idx: number) =>
+  //       idx !== videoInfos.length - 1 ? '#5C5C5C' : '#0047FF'
+  //     ),
+  //     borderWidth: 4,
+  //   },
+  // ];
 
   const barChartData = {
     labels,
     datasets: barChartDatasets,
   };
-  const lineChartData = {
-    labels,
-    datasets: lineChartDatasets,
-  };
+  // const lineChartData = {
+  //   labels,
+  //   datasets: lineChartDatasets,
+  // };
 
   const options = {
     responsive: true,
@@ -117,15 +117,15 @@ const SimpleBarChart: FunctionComponent<any> = ({ videoInfos }) => {
       },
       title: {
         display: true,
-        text:
-          !isEmpty(videoInfos) && !isEmpty(videoInfos[0])
-            ? videoInfos[0]?.title
-            : 'Graph',
+        // text:
+        //   !isEmpty(videoInfos) && !isEmpty(videoInfos[0])
+        //     ? videoInfos[0]?.title
+        //     : 'Graph',
       },
     },
   };
   return (
-    <div className='lg:px-32'>
+    <div className='mt-4 lg:px-32 grid grid-cols-1 md:grid-cols-2 md:gap-8'>
       <YoutubeEmbed
         videoId={
           !isEmpty(videoInfos) &&
@@ -135,8 +135,12 @@ const SimpleBarChart: FunctionComponent<any> = ({ videoInfos }) => {
             : ''
         }
       />
-      <Chart type='bar' options={options} data={barChartData} />;
-      <Line className='my-40' options={options} data={lineChartData} />;
+      <div>
+        <Chart type='bar' options={options} data={barChartData} />
+      </div>
+      {/* <div>
+        <Line className='my-40' options={options} data={lineChartData} />
+      </div> */}
     </div>
   );
 };

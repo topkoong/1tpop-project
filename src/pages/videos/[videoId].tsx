@@ -1,9 +1,12 @@
+import 'moment/locale/th';
+
 import Head from 'next/head';
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next';
 import SimpleBarChart from '@components/SimpleBarChart';
 import axios from 'axios';
 import { isEmpty } from 'lodash';
+import moment from 'moment-timezone';
 import { useRouter } from 'next/router';
 
 // TODO
@@ -33,17 +36,21 @@ const fetchDailyVideosIds = async (): Promise<any> => {
 };
 
 const VideoPage: NextPage = ({ videoInfos }: any) => {
+  const startOfWeek = moment()
+    .startOf('isoWeek')
+    .tz('Asia/Bangkok')
+    .format('l');
+  const endOfWeek = moment().endOf('isoWeek').tz('Asia/Bangkok').format('l');
   const router = useRouter();
   const { videoId } = router.query;
   const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   // TODO:
   // handle when there's no videoId
+
   return !isEmpty(videoInfo) ? (
     <>
       <Head>
-        <title>
-          1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร
-        </title>
+        <title>1TPOP - {videoInfo?.title}</title>
         <meta property='og:type' content='website' />
         <meta name='description' content={`1TPOP - ${videoInfo?.title}`} />
         <meta property='og:title' content={`1TPOP - ${videoInfo?.title}`} />
@@ -59,13 +66,21 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
         <meta property='og:locale' content='th_TH' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className='px-8 w-full'>
+      <main className='w-full'>
         <h1 className='text-4xl uppercase font-bold my-8'>
           {videoInfo?.title ?? 'testing'}
         </h1>
 
         {/* <TabsRender /> */}
         {/* <YouTubeChartTestWrapper /> */}
+        <div className='px-8 flex w-full bg-[#3D3D3D] h-[144px] flex-col items-start justify-center gap-4'>
+          <h1 className='text-base lg:text-3xl uppercase font-bold text-white'>
+            Graph of the Week{' '}
+            <span className='inline-block text-sm md:text-base lg:text-xl xl:text-2xl font-bold text-white'>
+              {`(${startOfWeek} - ${endOfWeek})`}
+            </span>
+          </h1>
+        </div>
         <SimpleBarChart videoInfos={videoInfos} />
       </main>
     </>
