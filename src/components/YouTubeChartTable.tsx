@@ -44,7 +44,7 @@ const YoutubeChartTable: FunctionComponent<any> = ({
           return (
             <tr
               onClick={() =>
-                window.open(`/videos/${row.original.videoId}`, '_blank')
+                window.open(`./videos/${row.original.videoId}`, '_blank')
               }
               key={row.id}
               className='border-b-[3px] w-full h-full cursor-pointer'
