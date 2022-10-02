@@ -8,7 +8,7 @@ const RankCell: FunctionComponent<any> = ({ row }) => {
       className={classNames(
         'py-2 w-full flex flex-col items-center justify-center',
         {
-          'h-[140px] md:h-[160px] lg:h-[170px] xl:h-[180px] 2xl:h-[200px]':
+          'h-[80px] sm:h-[120px] md:h-[160px] lg:h-[170px] xl:h-[180px] 2xl:h-[200px]':
             idx === 0,
           'text-[#0047FF]': [0, 1, 2].includes(idx),
         }

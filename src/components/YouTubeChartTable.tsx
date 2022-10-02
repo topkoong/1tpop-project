@@ -29,8 +29,42 @@ const YoutubeChartTable: FunctionComponent<any> = ({
                       header.getContext()
                     )}
                     {{
-                      asc: ' 🔼',
-                      desc: ' 🔽',
+                      asc: (
+                        <span>
+                          {' '}
+                          <svg
+                            width='13'
+                            height='11'
+                            viewBox='0 0 13 11'
+                            fill='none'
+                            xmlns='http://www.w3.org/2000/svg'
+                            className='hidden md:inline'
+                          >
+                            <path
+                              d='M6.06218 0L12.1244 10.5L0 10.5L6.06218 0Z'
+                              fill='white'
+                            />
+                          </svg>
+                        </span>
+                      ),
+                      desc: (
+                        <span>
+                          {' '}
+                          <svg
+                            width='13'
+                            height='11'
+                            viewBox='0 0 13 11'
+                            fill='none'
+                            xmlns='http://www.w3.org/2000/svg'
+                            className='hidden md:inline'
+                          >
+                            <path
+                              d='M6.06218 10.5L4.73264e-06 -1.05994e-06L12.1244 0L6.06218 10.5Z'
+                              fill='white'
+                            />
+                          </svg>
+                        </span>
+                      ),
                     }[header.column.getIsSorted() as string] ?? null}
                   </div>
                 )}
