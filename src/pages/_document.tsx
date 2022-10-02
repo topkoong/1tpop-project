@@ -97,6 +97,7 @@ export default class Document extends NextDocument {
           />
           <link rel='icon' href='./favicon.ico' />
           <link rel='manifest' href='./manifest.json' />
+          <meta property='og:image:url' content='./apple-icon-180x180.png' />
         </Head>
         <body>
           <Main />
