@@ -29,6 +29,7 @@ const Contact: NextPage = () => {
         ></meta>
         <meta property='og:site_name' content='1TPOP' />
         <link rel='icon' href='./favicon.ico' />
+        <meta property='og:image:url' content='./apple-icon-180x180.png' />
       </Head>
       <main className='px-8 w-full flex flex-col items-center justify-center'>
         <div>
