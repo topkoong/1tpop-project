@@ -127,7 +127,7 @@ const Home: NextPage = () => {
             <div className='flex-grow border-t h-[8px] md:h-[18px] bg-gradient-to-r from-[#FF2727] to-[#0047FF]'></div>
           </div>
         </section>
-        <section className='p-8 my-4 md:my-0 h-full'>
+        <section className='p-8 h-full'>
           <div className='p-8 flex flex-col md:flex-row justify-between bg-[#0047FF]'>
             <h1 className='text-base lg:text-3xl uppercase font-bold text-white'>
               YouTube’s T-POP Top Songs Chart This Week!{' '}
@@ -165,7 +165,7 @@ const Home: NextPage = () => {
                         {idx + 1}
                       </p>
                     </div>
-                    <div className='w-full p-8 col-span-full'>
+                    <div className='w-full p-4 md:p-8 col-span-full'>
                       <div className='grid grid-rows-2 h-full gap-4'>
                         <div className='w-full'>
                           <p className='text-black font-bold text-base lg:text-2xl'>
@@ -173,7 +173,7 @@ const Home: NextPage = () => {
                           </p>
                         </div>
                         <div>
-                          <div className='flex justify-start gap-8'>
+                          <div className='flex flex-col md:flex-row justify-start gap-8'>
                             <div className='flex gap-4 items-center'>
                               <svg
                                 width='33'
