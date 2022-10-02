@@ -96,7 +96,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name='msapplication-TileColor' content='#ffffff' />
         <meta name='msapplication-TileImage' content='./ms-icon-144x144.png' />
         <meta name='theme-color' content='#ffffff' />
-        <meta property='og:image:url' content='./apple-icon-180x180.png' />
+        <meta
+          property='og:image:url'
+          content='https://topkoong.github.io/1tpop-project/apple-icon-180x180.png'
+        />
       </Head>
       <Layout>
         <QueryClientProvider client={queryClient}>

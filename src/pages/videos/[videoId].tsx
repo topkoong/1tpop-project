@@ -65,7 +65,10 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
         <meta property='og:site_name' content='1TPOP' />
         <meta property='og:locale' content='th_TH' />
         <link rel='icon' href='./favicon.ico' />
-        <meta property='og:image:url' content='./apple-icon-180x180.png' />
+        <meta
+          property='og:image:url'
+          content='https://topkoong.github.io/1tpop-project/apple-icon-180x180.png'
+        />
       </Head>
       <main className='w-full bg-[#efefef]'>
         {/* <TabsRender /> */}
