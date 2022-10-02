@@ -66,11 +66,7 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
         <meta property='og:locale' content='th_TH' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className='w-full'>
-        <h1 className='text-4xl uppercase font-bold my-8'>
-          {videoInfo?.title ?? 'testing'}
-        </h1>
-
+      <main className='w-full bg-[#efefef]'>
         {/* <TabsRender /> */}
         {/* <YouTubeChartTestWrapper /> */}
         <div className='px-8 flex w-full bg-[#3D3D3D] h-[144px] flex-col items-start justify-center gap-4'>

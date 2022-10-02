@@ -16,6 +16,7 @@ import { Chart, Line } from 'react-chartjs-2';
 import { FunctionComponent } from 'react';
 import { isEmpty } from 'lodash';
 import moment from 'moment-timezone';
+import useBreakpoints from '@hooks/useBreakpoints';
 
 ChartJS.register(
   CategoryScale,
@@ -49,6 +50,7 @@ const SimpleBarChart: FunctionComponent<any> = ({ videoInfos }) => {
   const labels = videoInfos.map((dt: any) =>
     moment(dt.date).tz('Asia/Bangkok').format('l')
   );
+  const { isLg, isXl, is2Xl } = useBreakpoints();
 
   const startOfWeek = moment()
     .startOf('isoWeek')
@@ -125,17 +127,107 @@ const SimpleBarChart: FunctionComponent<any> = ({ videoInfos }) => {
     },
   };
   return (
-    <div className='mt-4 lg:px-32 grid grid-cols-1 md:grid-cols-2 md:gap-8'>
-      <YoutubeEmbed
-        videoId={
-          !isEmpty(videoInfos) &&
-          !isEmpty(videoInfos[0]) &&
-          !isEmpty(videoInfos[0]?.videoId)
-            ? videoInfos[0]?.videoId
-            : ''
-        }
-      />
-      <div>
+    <div className='mt-4 px-4 grid grid-cols-1 md:grid-cols-2 md:gap-4'>
+      <div className='bg-white p-4 h-fit'>
+        <YoutubeEmbed
+          videoId={
+            !isEmpty(videoInfos) &&
+            !isEmpty(videoInfos[0]) &&
+            !isEmpty(videoInfos[0]?.videoId)
+              ? videoInfos[0]?.videoId
+              : ''
+          }
+        />
+        <div className='w-full grid gap-4'>
+          <div
+            key={videoInfos[0].title}
+            className='grid grid-cols-3 bg-white w-full'
+          >
+            <div className='bg-white w-14 col-end-1 grid items-center border-r-2 border-black my-4'>
+              <p className='text-black text-center text-xl sm:text-3xl md:text-4xl lg:text-5xl'>
+                {1}
+              </p>
+              <div className='flex justify-center'>
+                <svg
+                  width='21'
+                  height='18'
+                  viewBox='0 0 21 18'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    d='M10.5 0L20.4593 17.25H0.540708L10.5 0Z'
+                    fill='#BDFF00'
+                  />
+                </svg>
+              </div>
+            </div>
+            <div className='w-full p-8 col-span-full'>
+              <div className='grid grid-rows-2 h-full gap-4'>
+                <div className='w-full'>
+                  <p className='text-black font-bold text-base lg:text-2xl'>
+                    {videoInfos[0].title}
+                  </p>
+                </div>
+                <div>
+                  <div className='flex justify-start gap-8'>
+                    <div className='flex gap-4 items-center'>
+                      <svg
+                        width='33'
+                        height='34'
+                        viewBox='0 0 33 34'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <ellipse
+                          cx='16.2785'
+                          cy='16.7718'
+                          rx='16.2785'
+                          ry='16.7718'
+                          fill='#D9D9D9'
+                        />
+                      </svg>
+                      <p className='font-bold text-sm md:text-base lg:text-lg'>
+                        {' '}
+                        {isLg || isXl || is2Xl
+                          ? videoInfos[0]?.views
+                              ?.toString()
+                              .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                          : Intl.NumberFormat('en', {
+                              notation: 'compact',
+                            }).format(videoInfos[0].views)}
+                      </p>
+                    </div>
+                    <div className='flex gap-4 items-center'>
+                      <svg
+                        width='33'
+                        height='34'
+                        viewBox='0 0 33 34'
+                        fill='none'
+                        xmlns='http://www.w3.org/2000/svg'
+                      >
+                        <ellipse
+                          cx='16.2785'
+                          cy='16.7718'
+                          rx='16.2785'
+                          ry='16.7718'
+                          fill='#D9D9D9'
+                        />
+                      </svg>
+                      <p className='font-bold text-sm md:text-base lg:text-lg'>
+                        {moment(videoInfos[0].publishedAt)
+                          .tz('Asia/Bangkok')
+                          .format('l')}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='bg-white p-4'>
         <Chart type='bar' options={options} data={barChartData} />
       </div>
       {/* <div>

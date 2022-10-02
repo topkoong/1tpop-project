@@ -10,7 +10,7 @@ const RankCell: FunctionComponent<any> = ({ row }) => {
         {
           'h-[140px] md:h-[160px] lg:h-[170px] xl:h-[180px] 2xl:h-[200px]':
             idx === 0,
-          'text-[#F7282E]': [0, 1, 2].includes(idx),
+          'text-[#0047FF]': [0, 1, 2].includes(idx),
         }
       )}
     >
