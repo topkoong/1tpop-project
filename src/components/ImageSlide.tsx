@@ -12,7 +12,7 @@ const ImageSlide: FunctionComponent<{
   <div className='w-full stacked'>
     <div
       className={classNames(
-        'mb-12 sm:mb-16 w-[133px] sm:w-[173px] md:w-[233px] lg:w-[273px] h-[33px] sm:h-[43px] md:h-[83px] lg:h-[93px] flex justify-center items-center',
+        'mb-12 sm:mb-16 w-[223px] sm:w-[233px] md:w-[383px] lg:w-[403px] h-[53px] sm:h-[43px] md:h-[83px] lg:h-[93px] flex justify-center items-center',
         {
           'bg-[#0047FF]': isEmpty(backgroundColor),
           [`bg-[${backgroundColor}]`]: !isEmpty(backgroundColor),
