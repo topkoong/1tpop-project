@@ -43,6 +43,7 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   const endOfWeek = moment().endOf('isoWeek').tz('Asia/Bangkok').format('l');
   const router = useRouter();
   const { videoId } = router.query;
+  // Extract single video info to provide in metadata
   const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   // TODO:
   // handle when there's no videoId
@@ -125,7 +126,7 @@ export async function getStaticProps(context: any) {
 
   return {
     props: {
-      videoInfos,
+      videoInfos, //same video Id for every single day
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in

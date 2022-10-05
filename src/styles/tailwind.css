@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Prompt';
-  src: url('/fonts/Prompt-Regular.ttf');
+  src: url('https://topkoong.github.io/1tpop-project/fonts/Prompt-Regular.ttf');
   font-weight: normal;
   font-display: swap;
   font-style: normal;
@@ -12,14 +12,14 @@
 
 @font-face {
   font-family: 'Prompt';
-  src: url('/fonts/Prompt-Medium.ttf');
+  src: url('https://topkoong.github.io/1tpop-project/fonts/Prompt-Medium.ttf');
   font-weight: medium;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: 'Prompt';
-  src: url('/fonts/Prompt-Bold.ttf');
+  src: url('https://topkoong.github.io/1tpop-project/fonts/Prompt-Bold.ttf');
   font-weight: bold;
   font-display: swap;
   font-style: normal;
