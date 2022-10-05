@@ -36,7 +36,10 @@ const Charts: NextPage = () => {
         />
         <meta property='og:locale' content='th_TH' />
         <meta property='og:site_name' content='1TPOP' />
-        <link rel='icon' href='./favicon.ico' />
+        <link
+          rel='icon'
+          href='https://topkoong.github.io/1tpop-project/favicon.ico'
+        />
         <meta
           property='og:image:url'
           content='https://topkoong.github.io/1tpop-project/apple-icon-180x180.png'

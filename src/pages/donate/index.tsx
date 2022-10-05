@@ -27,7 +27,10 @@ const Contact: NextPage = () => {
           content='1TPOP Email: onetpopthailand@gmail.com Tel: 1234567'
         ></meta>
         <meta property='og:site_name' content='1TPOP' />
-        <link rel='icon' href='./favicon.ico' />
+        <link
+          rel='icon'
+          href='https://topkoong.github.io/1tpop-project/favicon.ico'
+        />
         <meta
           property='og:image:url'
           content='https://topkoong.github.io/1tpop-project/apple-icon-180x180.png'

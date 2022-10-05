@@ -27,7 +27,10 @@ const Experiment: FunctionComponent = () => {
           property='og:description'
           content='1TPOP - Retrieve information about a specific video.'
         />
-        <link rel='icon' href='./favicon.ico' />
+        <link
+          rel='icon'
+          href='https://topkoong.github.io/1tpop-project/favicon.ico'
+        />
       </Head>
       <main className='px-8 w-full'>
         <h1 className='text-4xl uppercase font-bold my-8'>Playground</h1>
