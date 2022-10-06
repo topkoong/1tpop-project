@@ -51,7 +51,7 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
     data: videoInfo,
     error,
   } = useQuery(
-    ['fetchDailyVideoInfo', videoId],
+    ['fetchDailyVideoInfo'],
     () => fetchDailyVideoInfo(videoId as string),
     { initialData: videoInfos.find((vdo: any) => vdo.videoId === videoId) }
   );
@@ -60,7 +60,7 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   // TODO:
   // handle when there's no videoId
 
-  return isLoading || isEmpty(videoInfos) ? (
+  return isLoading || isEmpty(videoInfos) || isEmpty(videoInfo) ? (
     <Spinner />
   ) : isError && error instanceof Error ? (
     <span>Error: {error?.message} </span>
