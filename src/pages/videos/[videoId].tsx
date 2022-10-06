@@ -4,9 +4,11 @@ import Head from 'next/head';
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next';
 import SimpleBarChart from '@components/SimpleBarChart';
+import Spinner from '@components/Spinner';
 import axios from 'axios';
 import { isEmpty } from 'lodash';
 import moment from 'moment-timezone';
+import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 
 // TODO
@@ -43,12 +45,26 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   const endOfWeek = moment().endOf('isoWeek').tz('Asia/Bangkok').format('l');
   const router = useRouter();
   const { videoId } = router.query;
+  const {
+    isLoading,
+    isError,
+    data: videoInfo,
+    error,
+  } = useQuery(
+    ['fetchDailyVideoInfo', videoId],
+    () => fetchDailyVideoInfo(videoId as string),
+    { initialData: videoInfos.find((vdo: any) => vdo.videoId === videoId) }
+  );
   // Extract single video info to provide in metadata
-  const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
+  // const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   // TODO:
   // handle when there's no videoId
 
-  return !isEmpty(videoInfo) ? (
+  return isLoading || isEmpty(videoInfos) ? (
+    <Spinner />
+  ) : isError && error instanceof Error ? (
+    <span>Error: {error?.message} </span>
+  ) : (
     <>
       <Head>
         <title>1TPOP - {videoInfo?.title}</title>
@@ -88,36 +104,6 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
         <SimpleBarChart videoInfos={videoInfos} />
       </main>
     </>
-  ) : (
-    <>
-      <Head>
-        <title>
-          1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร
-        </title>
-        <meta property='og:type' content='website' />
-        <meta
-          name='description'
-          content={`1TPOP - THE WEEK'S MOST POPULAR CURRENT SONGS ACROSS ALL GENRES`}
-        />
-        <meta
-          property='og:title'
-          content={`1TPOP - THE WEEK'S MOST POPULAR CURRENT SONGS ACROSS ALL GENRES`}
-        />
-        <meta
-          property='og:description'
-          content={`1TPOP - ${videoInfo?.title}`}
-        />
-        <link
-          rel='icon'
-          href='https://topkoong.github.io/1tpop-project/favicon.ico'
-        />
-      </Head>
-      <main className='px-8 w-full'>
-        <div className='flex min-h-screen flex-col items-center justify-center font-display uppercase'>
-          <p>The chart will be updated soon.</p>
-        </div>
-      </main>
-    </>
   );
 };
 
@@ -137,7 +123,7 @@ export async function getStaticProps(context: any) {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 15, // In seconds
+    revalidate: 10, // In seconds
   };
 }
 // This function gets called at build time on server-side.

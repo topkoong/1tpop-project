@@ -30,7 +30,7 @@ const Tabs: FunctionComponent<{ color: string }> = ({ color }) => {
     isError,
     data: videoInfos,
     error,
-  } = useQuery('fetchVideosInfos', fetchVideosInfos);
+  } = useQuery(['fetchVideosInfos'], fetchVideosInfos);
 
   return isLoading || isEmpty(videoInfos) ? (
     <Spinner />

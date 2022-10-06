@@ -25,7 +25,7 @@ const YoutubeChartWrapper: FunctionComponent = () => {
     isError,
     data: videoInfos,
     error,
-  } = useQuery('fetchVideosInfos', fetchVideosInfos);
+  } = useQuery(['fetchVideosInfos'], fetchVideosInfos);
 
   return isLoading || isEmpty(videoInfos) ? (
     <Spinner />

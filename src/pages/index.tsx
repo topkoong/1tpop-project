@@ -55,14 +55,14 @@ const Home: NextPage = () => {
     isError,
     data: videoInfos,
     error,
-  } = useQuery('fetchTopViewsVideosInfos', fetchTopViewsVideosInfos);
+  } = useQuery(['fetchTopViewsVideosInfos'], fetchTopViewsVideosInfos);
 
   const {
     isLoading: isLoadingImages,
     isError: isFetchingImagesSlidersError,
     data: imageSliders,
     error: fetchingImagesSlidersError,
-  } = useQuery('fetchImageSliders', fetchImageSliders);
+  } = useQuery(['fetchImageSliders'], fetchImageSliders);
   return (
     <>
       <Head>
@@ -447,7 +447,7 @@ export async function getStaticProps() {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 15, // In seconds
+    revalidate: 10, // In seconds
   };
 }
 
