@@ -51,14 +51,15 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
     data: videoInfo,
     error,
   } = useQuery(
-    ['fetchDailyVideoInfo'],
-    () => fetchDailyVideoInfo(videoId as string),
+    ['fetchDailyVideoInfo', videoId],
+    ({ queryKey }) => fetchDailyVideoInfo(queryKey[1] as string),
     { initialData: videoInfos.find((vdo: any) => vdo.videoId === videoId) }
   );
   // Extract single video info to provide in metadata
   // const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   // TODO:
   // handle when there's no videoId
+  const title = videoInfo?.title || '';
 
   return isLoading || isEmpty(videoInfos) || isEmpty(videoInfo) ? (
     <Spinner />
@@ -67,14 +68,11 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   ) : (
     <>
       <Head>
-        <title>1TPOP - {videoInfo?.title}</title>
+        <title>1TPOP - {title}</title>
         <meta property='og:type' content='website' />
-        <meta name='description' content={`1TPOP - ${videoInfo?.title}`} />
-        <meta property='og:title' content={`1TPOP - ${videoInfo?.title}`} />
-        <meta
-          property='og:description'
-          content={`1TPOP - ${videoInfo?.title}`}
-        />
+        <meta name='description' content={`1TPOP - ${title}`} />
+        <meta property='og:title' content={`1TPOP - ${title}`} />
+        <meta property='og:description' content={`1TPOP - ${title}`} />
         <meta
           property='og:url'
           content={`https://topkoong.github.io/1tpop-project/${videoInfo?.videoId}`}

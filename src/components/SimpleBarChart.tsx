@@ -190,12 +190,12 @@ const SimpleBarChart: FunctionComponent<any> = ({ videoInfos }) => {
                       <p className='font-bold text-sm md:text-base lg:text-lg'>
                         {' '}
                         {isLg || isXl || is2Xl
-                          ? videoInfos[0]?.views
+                          ? videoInfos[videoInfos.length - 1]?.views
                               ?.toString()
                               .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
                           : Intl.NumberFormat('en', {
                               notation: 'compact',
-                            }).format(videoInfos[0].views)}
+                            }).format(videoInfos[videoInfos.length - 1].views)}
                       </p>
                     </div>
                     <div className='flex gap-4 items-center'>
