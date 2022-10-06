@@ -17,7 +17,7 @@ import axios from 'axios';
 import { isEmpty } from 'lodash';
 import moment from 'moment-timezone';
 import useBreakpoints from '@hooks/useBreakpoints';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 const fetchTopViewsVideosInfos = async (): Promise<any> => {
   const { data } = await axios.get(

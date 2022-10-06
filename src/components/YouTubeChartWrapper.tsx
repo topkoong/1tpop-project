@@ -5,7 +5,7 @@ import Spinner from '@components/Spinner';
 import YoutubeChartTableLayout from '@components/YouTubeChartTableLayout';
 import axios from 'axios';
 import { isEmpty } from 'lodash';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 const YoutubeChartWrapper: FunctionComponent = () => {
   const fetchVideosInfos = async (): Promise<any> => {

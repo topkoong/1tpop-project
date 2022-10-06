@@ -4,7 +4,7 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import Spinner from './Spinner';
 import axios from 'axios';
 import { isEmpty } from 'lodash';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 interface VideoInfo {
   [key: string]: string;
