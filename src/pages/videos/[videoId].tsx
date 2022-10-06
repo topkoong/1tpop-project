@@ -59,7 +59,7 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   // const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   // TODO:
   // handle when there's no videoId
-  const title = videoInfo?.title || '';
+  const title = `1TPOP - ${videoInfo[0]?.title}`;
 
   return isLoading || isEmpty(videoInfos) || isEmpty(videoInfo) ? (
     <Spinner />
@@ -68,11 +68,11 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   ) : (
     <>
       <Head>
-        <title>1TPOP - {title}</title>
+        <title>{title}</title>
         <meta property='og:type' content='website' />
-        <meta name='description' content={`1TPOP - ${title}`} />
-        <meta property='og:title' content={`1TPOP - ${title}`} />
-        <meta property='og:description' content={`1TPOP - ${title}`} />
+        <meta name='description' content={title} />
+        <meta property='og:title' content={title} />
+        <meta property='og:description' content={title} />
         <meta
           property='og:url'
           content={`https://topkoong.github.io/1tpop-project/${videoInfo?.videoId}`}
