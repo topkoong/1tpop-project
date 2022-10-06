@@ -13,11 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
   return (
     <>
-      <Head>
-        <title>
-          1TPOP - อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม
-          Top Chart Songs เพลงฮิต เพลงใหม่ล่าสุด
-        </title>
+      {/* <Head>
         <meta
           name='description'
           content='1TPOP - อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงฮิต เพลงใหม่ล่าสุด'
@@ -109,7 +105,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           property='og:image:url'
           content='https://topkoong.github.io/1tpop-project/apple-icon-180x180.png'
         />
-      </Head>
+      </Head> */}
       <Layout>
         <QueryClientProvider client={queryClient}>
           <Component {...pageProps} />
