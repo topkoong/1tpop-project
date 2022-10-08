@@ -91,7 +91,10 @@ export default class Document extends NextDocument {
             sizes='16x16'
             href='https://topkoong.github.io/1tpop-project/favicon-16x16.png'
           />
-          <link rel='manifest' href='./manifest.json' />
+          <link
+            rel='manifest'
+            href='https://topkoong.github.io/1tpop-project/manifest.json'
+          />
           <meta
             property='og:image:url'
             content='https://topkoong.github.io/1tpop-project/apple-icon-180x180.png'
