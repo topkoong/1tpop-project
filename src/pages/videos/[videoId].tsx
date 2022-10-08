@@ -1,7 +1,6 @@
 import 'moment/locale/th';
 
 import Head from 'next/head';
-/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next';
 import SimpleBarChart from '@components/SimpleBarChart';
 import Spinner from '@components/Spinner';
