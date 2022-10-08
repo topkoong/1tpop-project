@@ -27,6 +27,8 @@ const Experiment: FunctionComponent = () => {
           property='og:description'
           content='1TPOP - Retrieve information about a specific video.'
         />
+        <meta property='og:locale' content='th_TH' />
+        <meta property='og:site_name' content='1TPOP' />
         <link
           rel='icon'
           href='https://topkoong.github.io/1tpop-project/favicon.ico'
