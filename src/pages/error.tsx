@@ -16,6 +16,8 @@ const ErrorPage: NextPage = () => {
           property='og:title'
           content={`1TPOP - THE WEEK'S MOST POPULAR CURRENT SONGS ACROSS ALL GENRES`}
         />
+        <meta property='og:locale' content='th_TH' />
+        <meta property='og:site_name' content='1TPOP' />
         <meta
           property='og:description'
           content='1TPOP - เช็คอันดับเพลงฮิต 2022 อัพเดทประจำทุกสัปดาห์ได้ก่อนใคร เพลงฮิตติดชาร์ต การันตี รวม Top Chart Songs เพลงใหม่ล่าสุด'
