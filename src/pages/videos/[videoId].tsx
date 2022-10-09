@@ -51,8 +51,8 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
     error,
   } = useQuery(
     ['fetchDailyVideoInfo', videoId],
-    ({ queryKey }) => fetchDailyVideoInfo(queryKey[1] as string),
-    { initialData: videoInfos.find((vdo: any) => vdo.videoId === videoId) }
+    ({ queryKey }) => fetchDailyVideoInfo(queryKey[1] as string)
+    // { initialData: videoInfos.find((vdo: any) => vdo.videoId === videoId) }
   );
   // Extract single video info to provide in metadata
   // const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
