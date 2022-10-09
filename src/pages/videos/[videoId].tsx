@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 
 // TODO
 // Update image tag
+// NEEDS TO FIX THIS
 
 const fetchDailyVideoInfo = async (videoId: string): Promise<any> => {
   const { data } = await axios.get(
