@@ -45,26 +45,25 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   const endOfWeek = moment().endOf('isoWeek').tz('Asia/Bangkok').format('l');
   const router = useRouter();
   const { videoId } = router.query;
-  const {
-    isLoading,
-    isError,
-    data: videoInfo,
-    error,
-  } = useQuery(
-    ['fetchDailyVideoInfo', videoId],
-    ({ queryKey }) => fetchDailyVideoInfo(queryKey[1] as string)
-    // { initialData: videoInfos.find((vdo: any) => vdo.videoId === videoId) }
-  );
+  // const {
+  //   isLoading,
+  //   isError,
+  //   data: videoInfo,
+  //   error,
+  // } = useQuery(
+  //   ['fetchDailyVideoInfo', videoId],
+  //   ({ queryKey }) => fetchDailyVideoInfo(queryKey[1] as string)
+  //   // { initialData: videoInfos.find((vdo: any) => vdo.videoId === videoId) }
+  // );
+  const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   // Extract single video info to provide in metadata
   // const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   // TODO:
   // handle when there's no videoId
   const title = `1TPOP - ${videoInfo[0]?.title}`;
 
-  return isLoading || isEmpty(videoInfos) || isEmpty(videoInfo) ? (
+  return isEmpty(videoInfos) || isEmpty(videoInfo) ? (
     <Spinner />
-  ) : isError && error instanceof Error ? (
-    <span>Error: {error?.message} </span>
   ) : (
     <>
       <Head>
