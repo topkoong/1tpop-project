@@ -62,7 +62,7 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   // handle when there's no videoId
   const title = `1TPOP - ${videoInfo[0]?.title}`;
 
-  return isEmpty(videoInfos) || isEmpty(videoInfo) ? (
+  return isEmpty(videoInfos) || isEmpty(videoInfo) || router.isFallback ? (
     <Spinner />
   ) : (
     <>
@@ -120,7 +120,7 @@ export async function getStaticProps(context: any) {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 30, // In seconds
+    revalidate: 10, // In seconds
   };
 }
 // This function gets called at build time on server-side.
@@ -137,7 +137,7 @@ export async function getStaticPaths() {
   // { fallback: blocking } will server-render pages
   // on-demand if the path doesn't exist.
 
-  return { paths, fallback: 'blocking' };
+  return { paths, fallback: 'true' }; // SSR page and then cache
 }
 
 export default VideoPage;
