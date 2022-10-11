@@ -7,7 +7,7 @@ import Spinner from '@components/Spinner';
 import axios from 'axios';
 import { isEmpty } from 'lodash';
 import moment from 'moment-timezone';
-import { useQuery } from '@tanstack/react-query';
+// import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 
 // TODO
@@ -55,12 +55,12 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   //   ({ queryKey }) => fetchDailyVideoInfo(queryKey[1] as string)
   //   // { initialData: videoInfos.find((vdo: any) => vdo.videoId === videoId) }
   // );
-  const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
+  const videoInfo = videoInfos?.find((vdo: any) => vdo.videoId === videoId);
   // Extract single video info to provide in metadata
   // const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   // TODO:
   // handle when there's no videoId
-  const title = `1TPOP - ${videoInfo[0]?.title}`;
+  const title = `1TPOP - ${videoInfo[0]?.title || ''}`;
 
   return isEmpty(videoInfos) || isEmpty(videoInfo) || router.isFallback ? (
     <Spinner />
@@ -120,7 +120,7 @@ export async function getStaticProps(context: any) {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 10, // In seconds
+    revalidate: 30, // In seconds
   };
 }
 // This function gets called at build time on server-side.
