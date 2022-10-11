@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { FunctionComponent } from 'react';
 
 const VideoCell: FunctionComponent<any> = ({ row }) => {
