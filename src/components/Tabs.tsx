@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { FunctionComponent, useEffect, useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 
 import Spinner from './Spinner';
 import axios from 'axios';
