@@ -113,20 +113,25 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
 // This function gets called at build time on server-side.
 // It may be called again, on a serverless function, if
 // revalidation is enabled and a new request comes in
-export async function getStaticProps(context: any) {
+export async function getServerSideProps(context: any) {
   const {
     params: { videoId },
   } = context;
   const videoInfos = await fetchDailyVideoInfo(videoId);
 
+  // return {
+  //   props: {
+  //     videoInfos, //same video Id for every single day
+  //   },
+  //   // Next.js will attempt to re-generate the page:
+  //   // - When a request comes in
+  //   // - At most once every 10 seconds
+  //   revalidate: 30, // In seconds
+  // };
   return {
     props: {
       videoInfos, //same video Id for every single day
     },
-    // Next.js will attempt to re-generate the page:
-    // - When a request comes in
-    // - At most once every 10 seconds
-    revalidate: 30, // In seconds
   };
 }
 // This function gets called at build time on server-side.
