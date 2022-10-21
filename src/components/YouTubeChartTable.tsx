@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import { flexRender } from '@tanstack/react-table';
+
 const YoutubeChartTable: FunctionComponent<any> = ({
   getHeaderGroups,
   getRowModel,
