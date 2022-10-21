@@ -84,7 +84,6 @@ const Charts: NextPage = () => {
             </button>
           </div>
         </div>
-
         {/* <div className='relative flex py-5 items-center'>
           <div className='flex-grow border-t bg-gradient-to-r from-[#FF2727] to-[#0047FF]'></div>
           <div className='flex-grow border-t bg-gradient-to-r from-[#FF2727] to-[#0047FF]'></div>
