@@ -62,9 +62,7 @@ const VideoPage: NextPage = ({ videoInfos }: any) => {
   // const videoInfo = videoInfos.find((vdo: any) => vdo.videoId === videoId);
   // TODO:
   // handle when there's no videoId
-  const title = !isEmpty(videoInfo)
-    ? `1TPOP - ${videoInfo[0]?.title || ''}`
-    : '';
+  const title = !isEmpty(videoInfo) ? `1TPOP - ${videoInfo.title || ''}` : '';
 
   if (router.isFallback) return null;
 
