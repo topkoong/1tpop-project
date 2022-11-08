@@ -7,7 +7,7 @@ import Spinner from '@components/Spinner';
 import axios from 'axios';
 import { isEmpty } from 'lodash';
 import moment from 'moment-timezone';
-import { useQuery } from '@tanstack/react-query';
+// import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 
 // TODO
